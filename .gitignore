@@ -1,0 +1,8 @@
+# working files that don't belong in the published site
+_backup/
+zephyr-dynamics-chat.json
+blnkdigital*.webp
+# original logo exports (the site uses the copies in assets/)
+a-sleek-professional-logo-*.png
+give-me-the-words-*.png
+.claude/

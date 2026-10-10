@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zephyr Dynamics — Tech, made easy</title>
+<meta name="description" content="Zephyr is a small build studio for people, clubs and race teams. Websites, apps, assistants and AI agents at one clear, fixed price.">
+<link rel="icon" href="assets/zephyr-logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Michroma&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/wall.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<header class="top">
+  <a class="top__brand" href="#top" aria-label="Zephyr Dynamics home">
+    <img src="assets/zephyr-wordmark.png" alt="Zephyr Dynamics">
+  </a>
+  <nav class="top__nav" aria-label="Main">
+    <a href="#build">Build</a>
+    <a href="#process">Process</a>
+    <a href="#partners">Paddock</a>
+    <a href="#work">Work</a>
+    <a href="#hello">Say hello</a>
+  </nav>
+  <a class="top__mail" href="mailto:hello@ohndracing.com">hello@ohndracing.com</a>
+</header>
+
+<main id="top">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <h1 class="giant" aria-label="Zephyr Dynamics">
+    <svg viewBox="0 0 1000 232" role="presentation" preserveAspectRatio="none">
+      <text x="0" y="122" textLength="1000" lengthAdjust="spacingAndGlyphs" class="g1">ZEPHYR</text>
+      <text x="0" y="224" textLength="1000" lengthAdjust="spacingAndGlyphs" class="g2">DYNAMICS</text>
+    </svg>
+  </h1>
+
+  <div class="ticker" aria-label="Tech, made easy. Websites, apps, assistants, AI agents.">
+    <div class="ticker__tag" aria-hidden="true">
+      <span>NO.</span><b>001</b><span>OPEN</span>
+    </div>
+    <div class="ticker__run" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Zephyr Dynamics</span><i>✦</i><span>Tech, made easy</span><i>✦</i><span>Websites</span><i>✦</i><span>Apps</span><i>✦</i><span>Assistants</span><i>✦</i><span>AI agents</span><i>✦</i>
+        <span>Zephyr Dynamics</span><i>✦</i><span>Tech, made easy</span><i>✦</i><span>Websites</span><i>✦</i><span>Apps</span><i>✦</i><span>Assistants</span><i>✦</i><span>AI agents</span><i>✦</i>
+      </div>
+    </div>
+    <div class="ticker__meta"><span>Effortless</span><span>power</span></div>
+  </div>
+
+  <div class="hero__strip" aria-hidden="true">
+    <span class="arrow">↓</span>
+    <span class="barcode"></span>
+  </div>
+
+  <figure class="wall" aria-label="Zephyr Dynamics pit wall: live timing, telemetry and track map. All data is simulated.">
+    <div class="wall__bar">
+      <div class="wall__brand">@ZEPHYRDYNAMICS</div>
+      <div class="wall__status">
+        <span class="chip chip--flag" data-bind="flag">TRACK CLEAR</span>
+        <span class="chip">LOCAL <b data-bind="local">--:--:--</b></span>
+        <span class="chip">SESSION <b data-bind="session">00:00:00</b></span>
+        <span class="chip">LAP <b data-bind="lap">1</b>/60</span>
+        <span class="chip chip--live"><i></i>LIVE</span>
+      </div>
+    </div>
+
+    <div class="wall__grid" aria-hidden="true">
+      <!-- weather radar -->
+      <section class="pnl pnl--radar">
+        <span class="tag">Weather radar</span>
+        <div class="radar">
+          <svg class="radar__map" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <path d="M0,100 C30,92 44,70 80,66 C120,62 130,40 170,34 L200,30" />
+            <path d="M0,40 C40,50 60,44 90,56 C120,68 150,92 200,96" />
+            <path d="M70,0 C74,30 66,60 84,90 C96,112 90,128 100,140" />
+            <path d="M140,0 C136,24 150,44 144,70 C140,92 160,112 156,140" />
+          </svg>
+          <i class="radar__ring r1"></i><i class="radar__ring r2"></i><i class="radar__ring r3"></i>
+          <i class="radar__x"></i><i class="radar__y"></i>
+          <div class="radar__cells"><b class="c1"></b><b class="c2"></b><b class="c3"></b></div>
+          <div class="radar__sweep"></div>
+          <span class="radar__lbl">RAIN RISK <b data-bind="rain">0</b>% · +30 MIN</span>
+        </div>
+      </section>
+
+      <!-- onboard -->
+      <section class="pnl pnl--fuel">
+        <span class="tag">Fuel monitor</span>
+        <div class="fuel">
+          <div class="fuel__head">ZEP 01 · Lap <b data-bind="f-lap">1</b></div>
+          <div class="fuel__bar"><div class="fuel__fill" data-bind="f-fill"></div></div>
+          <div class="fuel__lvl"><span>E</span><b data-bind="f-lvl">60.0 L (100%)</b><span>60 L</span></div>
+          <div class="fuel__meta"><span>Race <b data-bind="f-race">0</b> L</span><span>Stint <b data-bind="f-stint">0:00</b> m</span></div>
+          <table class="fuel__tbl">
+            <thead><tr><th></th><th>AVG</th><th>LAPS</th><th>STINT</th><th>REFUEL</th></tr></thead>
+            <tbody>
+              <tr><td>LAST</td><td data-bind="f-0a"></td><td data-bind="f-0l"></td><td data-bind="f-0s"></td><td><i data-bind="f-0r"></i></td></tr>
+              <tr><td>AVG 5L</td><td data-bind="f-1a"></td><td data-bind="f-1l"></td><td data-bind="f-1s"></td><td><i data-bind="f-1r"></i></td></tr>
+              <tr><td>AVG 10L</td><td data-bind="f-2a"></td><td data-bind="f-2l"></td><td data-bind="f-2s"></td><td><i data-bind="f-2r"></i></td></tr>
+            </tbody>
+          </table>
+          <div class="fuel__trio">
+            <div><span data-bind="f-n0">12 LAPS</span><b data-bind="f-t0"></b></div>
+            <div><span data-bind="f-n1">13 LAPS</span><b data-bind="f-t1"></b></div>
+            <div><span data-bind="f-n2">14 LAPS</span><b data-bind="f-t2"></b></div>
+          </div>
+          <div class="fuel__rem">
+            <div class="rl">LAPS REMAINING</div>
+            <div class="rg"><div class="g"><span>LAST</span><b data-bind="f-rl"></b></div><div class="a"><span>AVG</span><b data-bind="f-ra"></b></div><div class="w"><span>WORST</span><b data-bind="f-rw"></b></div></div>
+          </div>
+          <div class="fuel__pit"><span>PIT WINDOW</span><b>Lap <i data-bind="f-pw"></i></b><em data-bind="f-pt"></em></div>
+        </div>
+      </section>
+
+      <!-- race control + weather -->
+      <section class="pnl pnl--msgs">
+        <span class="tag">Weather &amp; race control</span>
+        <dl class="wx">
+          <div><dt>Track temp</dt><dd><b data-bind="track">30.5</b>°C</dd></div>
+          <div><dt>Air temp</dt><dd><b data-bind="air">24.1</b>°C</dd></div>
+          <div><dt>Humidity</dt><dd><b data-bind="hum">54</b>%</dd></div>
+          <div><dt>Wind</dt><dd><b data-bind="wind">2.4</b> m/s</dd></div>
+        </dl>
+        <ul class="msgs" data-bind="msgs"></ul>
+      </section>
+
+      <!-- timing -->
+      <section class="pnl pnl--timing">
+        <span class="tag">Timing &amp; session info</span>
+        <table class="tt">
+          <thead>
+            <tr><th>P</th><th>DRV</th><th>GAP</th><th class="hs">S1</th><th class="hs">S2</th><th class="hs">S3</th><th>LAST LAP</th><th>TYRE</th><th class="hs">STATUS</th></tr>
+          </thead>
+          <tbody data-bind="tt"></tbody>
+        </table>
+      </section>
+
+      <!-- race pace -->
+      <section class="pnl pnl--pace">
+        <span class="tag">Race pace</span>
+        <div class="pace" data-bind="pace"></div>
+      </section>
+
+      <!-- track gps -->
+      <section class="pnl pnl--gps">
+        <span class="tag">Track GPS</span>
+        <svg class="gps" viewBox="70 50 710 330" role="img" aria-label="Circuit map with cars moving around the track">
+          <path class="gps__edge" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
+          <path class="gps__line" id="gps-path" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
+          <path class="gps__sec gps__sec--1" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
+          <path class="gps__sec gps__sec--2" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
+          <path class="gps__sec gps__sec--3" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
+          <g class="gps__sf"><line x1="104" y1="290" x2="136" y2="290"/><text x="148" y="286">S/F</text></g>
+          <g class="gps__lbl"><text x="150" y="132">S1</text><text x="598" y="100">S2</text><text x="720" y="312">S3</text></g>
+          <g data-bind="dots"></g>
+        </svg>
+      </section>
+
+      <!-- telemetry -->
+      <section class="pnl pnl--tele">
+        <span class="tag">Telemetry · ZEP 01</span>
+        <svg class="tele" viewBox="0 0 300 150" preserveAspectRatio="none" role="img" aria-label="Speed, throttle and brake traces">
+          <g class="tele__grid"><path d="M0,36H300M0,93H300M0,129H300M75,0V150M150,0V150M225,0V150"/></g>
+          <polyline class="tele__speed" data-bind="t-speed" points=""/>
+          <polyline class="tele__thr" data-bind="t-thr" points=""/>
+          <polyline class="tele__brk" data-bind="t-brk" points=""/>
+        </svg>
+        <div class="tele__key"><span class="k-speed">SPEED <b data-bind="speed2">0</b></span><span class="k-thr">THR <b data-bind="thr">0</b>%</span><span class="k-brk">BRK <b data-bind="brk">0</b>%</span><span class="k-drs" data-bind="drs">DRS</span></div>
+      </section>
+    </div>
+    <figcaption class="wall__cap"><span>FIG. 01 · PIT WALL</span><span>Simulated data. Your project dashboard will be much simpler.</span></figcaption>
+  </figure>
+
+  <div class="intro">
+    <div class="intro__logo"><img src="assets/zephyr-logo.png" alt="Zephyr Dynamics mark"></div>
+    <p class="intro__text">
+      Zephyr Dynamics is a small build studio for people, clubs and race teams. Websites, apps, personal assistants and AI agents — scoped small, built fast, and sold at <b>one clear price</b>. No quotes. No jargon. One person you actually talk to.
+    </p>
+  </div>
+</section>
+
+<!-- ============ WHAT WE BUILD ============ -->
+<section class="dark build" id="build">
+  <div class="rule"><i>✦</i><i>✦</i><span>Four things we build · fixed prices</span><i>✦</i><i>✦</i></div>
+  <h2 class="sr-only">What we build</h2>
+
+  <div class="bigmarquee" aria-hidden="true">
+    <div class="bigmarquee__track">
+      <span>What we build</span><i>✺</i><span>What we build</span><i>✺</i><span>What we build</span><i>✺</i><span>What we build</span><i>✺</i>
+    </div>
+  </div>
+
+  <div class="cards">
+    <article class="card reveal">
+      <header><span>01</span><span>WEB</span></header>
+      <h3>Starter Site</h3>
+      <p>A clean, fast, mobile-ready site for you, your race team, business or club. Home, about, contact, info, done.</p>
+      <ul><li>Up to 4 sections</li><li>Contact form</li><li>Hosting set up</li><li>1 round of edits*</li></ul>
+      <footer><b>$250</b><span>fixed</span></footer>
+    </article>
+    <article class="card reveal">
+      <header><span>02</span><span>TEAM</span></header>
+      <h3>Club &amp; Race Team Site</h3>
+      <p>Schedule, roster, results, sponsors, sign-up. Everything your group keeps answering in the chat.</p>
+      <ul><li>Up to 6 sections</li><li>Schedule &amp; results</li><li>Sponsor wall</li><li>2 rounds of edits*</li></ul>
+      <footer><b>$450</b><span>fixed</span></footer>
+    </article>
+    <article class="card reveal">
+      <header><span>03</span><span>APP</span></header>
+      <h3>Personal Assistant App</h3>
+      <p>A little app that does one job for you: tracks it, reminds you, keeps it in one place. Lives on your phone.</p>
+      <ul><li>One focused job</li><li>Installs like an app</li><li>Private to you</li><li>1 round of edits*</li></ul>
+      <footer><b>$400</b><span>fixed</span></footer>
+    </article>
+    <article class="card reveal">
+      <header><span>04</span><span>AI</span></header>
+      <h3>AI Agent</h3>
+      <p>An assistant that answers questions, sorts the busywork, or looks things up. Trained on your stuff, explained in plain words.</p>
+      <ul><li>One clear task</li><li>Your own info</li><li>Plain-English handoff</li><li>2 rounds of tuning*</li></ul>
+      <footer><a class="inquire" href="#hello">Inquire <span aria-hidden="true">↗</span></a><span>contact us</span></footer>
+    </article>
+  </div>
+  <p class="fineprint">* Extra rounds of edits are available on request. Prices are starter packages. Bigger idea? Tell us — we’ll tell you the price before we start. Always.</p>
+</section>
+
+<!-- ============ WHAT YOU WON'T GET ============ -->
+<section class="nots">
+  <div class="rule rule--light"><i>✦</i><i>✦</i><span>What you won’t get</span><i>✦</i><i>✦</i></div>
+  <div class="strike" aria-label="No sprint planning, no scope creep, no buzzwords, no surprise invoices, no circling back.">
+    <div class="strike__track" aria-hidden="true">
+      <span>Sprint planning</span><i>✦</i><span>Scope creep</span><i>✦</i><span>Buzzwords</span><i>✦</i><span>Surprise invoices</span><i>✦</i><span>“Let’s circle back”</span><i>✦</i>
+      <span>Sprint planning</span><i>✦</i><span>Scope creep</span><i>✦</i><span>Buzzwords</span><i>✦</i><span>Surprise invoices</span><i>✦</i><span>“Let’s circle back”</span><i>✦</i>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat reveal"><b>1</b><span>person you talk to</span></div>
+    <div class="stat reveal"><b>0</b><span>surprise invoices</span></div>
+    <div class="stat reveal"><b>1</b><span>clear price, up front</span></div>
+  </div>
+</section>
+
+<!-- ============ PROCESS / TRACK ============ -->
+<section class="process" id="process">
+  <div class="process__head">
+    <div class="rule"><i>✦</i><i>✦</i><span>How it works</span><i>✦</i><i>✦</i></div>
+    <h2>One lap.<br>Four sectors.</h2>
+  </div>
+
+  <div class="process__grid">
+    <div class="track">
+      <svg viewBox="0 0 800 450" role="img" aria-label="Circuit map showing the four steps of a Zephyr build">
+        <g class="track__grid">
+          <path d="M0 75H800M0 150H800M0 225H800M0 300H800M0 375H800M100 0V450M200 0V450M300 0V450M400 0V450M500 0V450M600 0V450M700 0V450"/>
+        </g>
+        <path id="circuit-base" class="track__base" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
+        <path id="circuit" class="track__line" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z" fill="none"/>
+        <path class="seg seg-0" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
+        <path class="seg seg-1" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
+        <path class="seg seg-2" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
+        <path class="seg seg-3" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
+
+        <!-- start / finish -->
+        <g class="sf">
+          <line x1="132" y1="330" x2="168" y2="330"/>
+          <text x="180" y="316" text-anchor="start">START / FINISH</text>
+        </g>
+        <g class="turns">
+          <text x="508" y="206">T1</text><text x="760" y="132">T2</text><text x="660" y="272">T3</text><text x="582" y="350">T4</text><text x="112" y="376">T5</text>
+        </g>
+        <circle id="dot" r="9" cx="150" cy="330"/>
+        <circle id="dot-ring" r="18" cx="150" cy="330"/>
+      </svg>
+      <div class="track__cap"><span>CIRCUIT ZD · 1 LAP = 1 BUILD</span><span>CLOCKWISE</span></div>
+    </div>
+
+    <ol class="sectors">
+      <li class="sector" data-i="0" tabindex="0">
+        <span class="sector__n">S1</span>
+        <div><h3>Say hello</h3><p>Tell us what you want, in your own words. We reply with the package that fits and the exact price.</p></div>
+      </li>
+      <li class="sector" data-i="1" tabindex="0">
+        <span class="sector__n">S2</span>
+        <div><h3>Pick your lines</h3><p>Choose colors, vibe and the few things that matter. Small scope is the whole point.</p></div>
+      </li>
+      <li class="sector" data-i="2" tabindex="0">
+        <span class="sector__n">S3</span>
+        <div><h3>We build</h3><p>You get a live preview link while it’s taking shape. Nudge it any time.</p></div>
+      </li>
+      <li class="sector" data-i="3" tabindex="0">
+        <span class="sector__n">S4</span>
+        <div><h3>Checkered flag</h3><p>It goes live, you own it, and you get a plain-English guide for keeping it running.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ PARTNERS ============ -->
+<section class="partners" id="partners" aria-label="Our partners">
+  <p class="partners__title">Partners in our Paddock</p>
+  <p class="partners__sub">All drafting in the same slipstream</p>
+  <div class="partners__run">
+    <div class="partners__track">
+      <div class="partners__group"><a class="partners__link" href="https://www.ohndracing.com" target="_blank" rel="noopener" aria-label="OHND Racing (opens ohndracing.com)"><img src="assets/client-ohnd.png" alt="OHND Racing" loading="lazy"></a><img src="assets/client-playa-vista.png" alt="Playa Vista Insurance Services" loading="lazy"><img src="assets/client-benefits-collective.png" alt="The Benefits Collective of Southern California" loading="lazy"><img src="assets/client-la-west-coast.png" alt="Los Angeles West Coast Clothing" loading="lazy"><a class="partners__link" href="https://www.ohndracing.com" target="_blank" rel="noopener" aria-label="OHND Racing (opens ohndracing.com)"><img src="assets/client-ohnd.png" alt="OHND Racing" loading="lazy"></a><img src="assets/client-playa-vista.png" alt="Playa Vista Insurance Services" loading="lazy"><img src="assets/client-benefits-collective.png" alt="The Benefits Collective of Southern California" loading="lazy"><img src="assets/client-la-west-coast.png" alt="Los Angeles West Coast Clothing" loading="lazy"></div>
+      <div class="partners__group" aria-hidden="true"><a class="partners__link" href="https://www.ohndracing.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/client-ohnd.png" alt="" loading="lazy"></a><img src="assets/client-playa-vista.png" alt="" loading="lazy"><img src="assets/client-benefits-collective.png" alt="" loading="lazy"><img src="assets/client-la-west-coast.png" alt="" loading="lazy"><a class="partners__link" href="https://www.ohndracing.com" target="_blank" rel="noopener" tabindex="-1"><img src="assets/client-ohnd.png" alt="" loading="lazy"></a><img src="assets/client-playa-vista.png" alt="" loading="lazy"><img src="assets/client-benefits-collective.png" alt="" loading="lazy"><img src="assets/client-la-west-coast.png" alt="" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section class="work dark" id="work">
+  <div class="rule"><i>✦</i><i>✦</i><span>A few things we’ve built</span><i>✦</i><i>✦</i></div>
+  <div class="work__grid">
+    <article class="job reveal">
+      <div class="job__art" aria-hidden="true">
+        <svg viewBox="0 0 300 180"><path class="tm" d="M40,120 C40,80 70,66 110,66 L170,66 C200,66 214,48 214,34 C214,20 230,14 246,14 C270,14 280,30 280,50 C280,78 262,88 240,92 L216,98 C200,102 196,116 204,130 C214,150 200,166 170,166 L90,166 C58,166 40,150 40,120Z"/></svg>
+      </div>
+      <header><span>CLUB / RACING</span><span>APP</span></header>
+      <h3>Race Host Game Hub</h3>
+      <p>A phone-installable hub for a sim-racing league: game info, links and quick answers for every driver in one place.</p>
+    </article>
+    <article class="job reveal">
+      <div class="job__art" aria-hidden="true">
+        <svg viewBox="0 0 300 180"><path class="tm" d="M30,140 L90,60 L150,100 L210,40 L270,120"/><path class="tm tm--d" d="M30,150 L270,150"/><circle cx="90" cy="60" r="5"/><circle cx="210" cy="40" r="5"/></svg>
+      </div>
+      <header><span>DRIVER TOOLS</span><span>WEB + DATA</span></header>
+      <h3>Lap Ledger</h3>
+      <p>Look up lap times and car setups fast, so a driver can find what worked last time without digging through spreadsheets.</p>
+    </article>
+    <article class="job reveal">
+      <div class="job__art" aria-hidden="true">
+        <svg viewBox="0 0 300 180"><rect class="tm" x="60" y="40" width="180" height="110" rx="6"/><path class="tm" d="M60,70H240M90,40V70"/><circle cx="110" cy="105" r="14" class="tm"/><path class="tm" d="M150,98H215M150,114H195"/></svg>
+      </div>
+      <header><span>RACE TEAM</span><span>WEBSITE</span></header>
+      <h3>Team Site, Sample</h3>
+      <p>Schedule, roster, results and sponsors for a small team, laid out so fans and crew find everything in two taps.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ HELLO ============ -->
+<section class="hello" id="hello">
+  <div class="hello__row">
+    <div class="hello__main">
+      <p class="hello__kicker">Got an idea?</p>
+      <a class="hello__mail" href="mailto:hello@ohndracing.com">Say hello <span aria-hidden="true">↗</span><br>hello@ohndracing.com</a>
+    </div>
+    <div class="hello__side">
+      <ul>
+        <li>Websites</li><li>Apps</li><li>Assistants</li><li>AI agents</li>
+      </ul>
+      <div class="hello__star" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><path d="M50 2 C54 32 68 46 98 50 C68 54 54 68 50 98 C46 68 32 54 2 50 C32 46 46 32 50 2Z"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="foot__giant" aria-hidden="true">
+    <svg viewBox="0 0 1000 232" preserveAspectRatio="none">
+      <text x="0" y="122" textLength="1000" lengthAdjust="spacingAndGlyphs" class="g1">ZEPHYR</text>
+      <text x="0" y="224" textLength="1000" lengthAdjust="spacingAndGlyphs" class="g2">DYNAMICS</text>
+    </svg>
+  </div>
+  <div class="foot__social" aria-label="Follow Zephyr Dynamics">
+    <a class="soc" href="https://www.instagram.com/ohndracing/" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+      <span>Instagram</span>
+    </a>
+    <a class="soc" href="https://x.com" target="_blank" rel="noopener" aria-label="X">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      <span>X</span>
+    </a>
+    <a class="soc" href="https://bsky.app/profile/dosx2.bsky.social" target="_blank" rel="noopener" aria-label="Bluesky">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 1.565.139 1.908 0 3.08 0 3.768c0 .69.378 5.65.624 6.479.815 2.736 3.713 3.66 6.383 3.364.136-.02.275-.039.415-.056-.138.022-.276.04-.415.056-3.912.58-7.387 2.005-2.83 7.078 5.013 5.19 6.87-1.113 7.823-4.308.953 3.195 2.05 9.271 7.733 4.308 4.267-4.308 1.172-6.498-2.74-7.078a8.741 8.741 0 0 1-.415-.056c.14.017.279.036.415.056 2.67.297 5.568-.628 6.383-3.364.246-.828.624-5.79.624-6.478 0-.69-.139-1.861-.902-2.206-.659-.298-1.664-.62-4.3 1.24C16.046 4.748 13.087 8.687 12 10.8Z"/></svg>
+      <span>Bluesky</span>
+    </a>
+    <a class="soc" href="https://github.com/dose2x" target="_blank" rel="noopener" aria-label="Zephyr Dynamics on GitHub">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+  <div class="foot__row">
+    <span>© 2026 Zephyr Dynamics — Effortless power</span>
+    <span>Starter-package pricing. Bigger idea? Just ask.</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/wall.js"></script>
+<script src="js/title.js"></script>
+</body>
+</html>
