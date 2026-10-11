@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Michroma&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/wall.css">
+<link rel="stylesheet" href="css/showroom.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -72,131 +72,114 @@
     <span class="barcode"></span>
   </div>
 
-  <figure class="wall" aria-label="Zephyr Dynamics pit wall: live timing, telemetry and track map. All data is simulated.">
-    <div class="wall__bar">
-      <div class="wall__brand">@ZEPHYRDYNAMICS</div>
-      <div class="wall__status">
-        <span class="chip chip--flag" data-bind="flag">TRACK CLEAR</span>
-        <span class="chip">LOCAL <b data-bind="local">--:--:--</b></span>
-        <span class="chip">SESSION <b data-bind="session">00:00:00</b></span>
-        <span class="chip">LAP <b data-bind="lap">1</b>/60</span>
-        <span class="chip chip--live"><i></i>LIVE</span>
-      </div>
-    </div>
-
-    <div class="wall__grid" aria-hidden="true">
-      <!-- weather radar -->
-      <section class="pnl pnl--radar">
-        <span class="tag">Weather radar</span>
-        <div class="radar">
-          <svg class="radar__map" viewBox="0 0 200 140" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <path d="M0,100 C30,92 44,70 80,66 C120,62 130,40 170,34 L200,30" />
-            <path d="M0,40 C40,50 60,44 90,56 C120,68 150,92 200,96" />
-            <path d="M70,0 C74,30 66,60 84,90 C96,112 90,128 100,140" />
-            <path d="M140,0 C136,24 150,44 144,70 C140,92 160,112 156,140" />
-          </svg>
-          <i class="radar__ring r1"></i><i class="radar__ring r2"></i><i class="radar__ring r3"></i>
-          <i class="radar__x"></i><i class="radar__y"></i>
-          <div class="radar__cells"><b class="c1"></b><b class="c2"></b><b class="c3"></b></div>
-          <div class="radar__sweep"></div>
-          <span class="radar__lbl">RAIN RISK <b data-bind="rain">0</b>% · +30 MIN</span>
-        </div>
-      </section>
-
-      <!-- onboard -->
-      <section class="pnl pnl--fuel">
-        <span class="tag">Fuel monitor</span>
-        <div class="fuel">
-          <div class="fuel__head">ZEP 01 · Lap <b data-bind="f-lap">1</b></div>
-          <div class="fuel__bar"><div class="fuel__fill" data-bind="f-fill"></div></div>
-          <div class="fuel__lvl"><span>E</span><b data-bind="f-lvl">60.0 L (100%)</b><span>60 L</span></div>
-          <div class="fuel__meta"><span>Race <b data-bind="f-race">0</b> L</span><span>Stint <b data-bind="f-stint">0:00</b> m</span></div>
-          <table class="fuel__tbl">
-            <thead><tr><th></th><th>AVG</th><th>LAPS</th><th>STINT</th><th>REFUEL</th></tr></thead>
-            <tbody>
-              <tr><td>LAST</td><td data-bind="f-0a"></td><td data-bind="f-0l"></td><td data-bind="f-0s"></td><td><i data-bind="f-0r"></i></td></tr>
-              <tr><td>AVG 5L</td><td data-bind="f-1a"></td><td data-bind="f-1l"></td><td data-bind="f-1s"></td><td><i data-bind="f-1r"></i></td></tr>
-              <tr><td>AVG 10L</td><td data-bind="f-2a"></td><td data-bind="f-2l"></td><td data-bind="f-2s"></td><td><i data-bind="f-2r"></i></td></tr>
-            </tbody>
-          </table>
-          <div class="fuel__trio">
-            <div><span data-bind="f-n0">12 LAPS</span><b data-bind="f-t0"></b></div>
-            <div><span data-bind="f-n1">13 LAPS</span><b data-bind="f-t1"></b></div>
-            <div><span data-bind="f-n2">14 LAPS</span><b data-bind="f-t2"></b></div>
-          </div>
-          <div class="fuel__rem">
-            <div class="rl">LAPS REMAINING</div>
-            <div class="rg"><div class="g"><span>LAST</span><b data-bind="f-rl"></b></div><div class="a"><span>AVG</span><b data-bind="f-ra"></b></div><div class="w"><span>WORST</span><b data-bind="f-rw"></b></div></div>
-          </div>
-          <div class="fuel__pit"><span>PIT WINDOW</span><b>Lap <i data-bind="f-pw"></i></b><em data-bind="f-pt"></em></div>
-        </div>
-      </section>
-
-      <!-- race control + weather -->
-      <section class="pnl pnl--msgs">
-        <span class="tag">Weather &amp; race control</span>
-        <dl class="wx">
-          <div><dt>Track temp</dt><dd><b data-bind="track">30.5</b>°C</dd></div>
-          <div><dt>Air temp</dt><dd><b data-bind="air">24.1</b>°C</dd></div>
-          <div><dt>Humidity</dt><dd><b data-bind="hum">54</b>%</dd></div>
-          <div><dt>Wind</dt><dd><b data-bind="wind">2.4</b> m/s</dd></div>
-        </dl>
-        <ul class="msgs" data-bind="msgs"></ul>
-      </section>
-
-      <!-- timing -->
-      <section class="pnl pnl--timing">
-        <span class="tag">Timing &amp; session info</span>
-        <table class="tt">
-          <thead>
-            <tr><th>P</th><th>DRV</th><th>GAP</th><th class="hs">S1</th><th class="hs">S2</th><th class="hs">S3</th><th>LAST LAP</th><th>TYRE</th><th class="hs">STATUS</th></tr>
-          </thead>
-          <tbody data-bind="tt"></tbody>
-        </table>
-      </section>
-
-      <!-- race pace -->
-      <section class="pnl pnl--pace">
-        <span class="tag">Race pace</span>
-        <div class="pace" data-bind="pace"></div>
-      </section>
-
-      <!-- track gps -->
-      <section class="pnl pnl--gps">
-        <span class="tag">Track GPS</span>
-        <svg class="gps" viewBox="70 50 710 330" role="img" aria-label="Circuit map with cars moving around the track">
-          <path class="gps__edge" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
-          <path class="gps__line" id="gps-path" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
-          <path class="gps__sec gps__sec--1" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
-          <path class="gps__sec gps__sec--2" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
-          <path class="gps__sec gps__sec--3" pathLength="100" d="M120,300 L120,220 C120,170 160,150 210,150 L330,150 C370,150 380,120 420,100 C470,75 540,80 560,110 C580,140 540,165 520,185 C500,205 520,230 560,235 L650,245 C710,252 730,290 690,320 C650,350 560,340 500,335 L260,330 C190,328 120,340 120,300 Z"/>
-          <g class="gps__sf"><line x1="104" y1="290" x2="136" y2="290"/><text x="148" y="286">S/F</text></g>
-          <g class="gps__lbl"><text x="150" y="132">S1</text><text x="598" y="100">S2</text><text x="720" y="312">S3</text></g>
-          <g data-bind="dots"></g>
-        </svg>
-      </section>
-
-      <!-- telemetry -->
-      <section class="pnl pnl--tele">
-        <span class="tag">Telemetry · ZEP 01</span>
-        <svg class="tele" viewBox="0 0 300 150" preserveAspectRatio="none" role="img" aria-label="Speed, throttle and brake traces">
-          <g class="tele__grid"><path d="M0,36H300M0,93H300M0,129H300M75,0V150M150,0V150M225,0V150"/></g>
-          <polyline class="tele__speed" data-bind="t-speed" points=""/>
-          <polyline class="tele__thr" data-bind="t-thr" points=""/>
-          <polyline class="tele__brk" data-bind="t-brk" points=""/>
-        </svg>
-        <div class="tele__key"><span class="k-speed">SPEED <b data-bind="speed2">0</b></span><span class="k-thr">THR <b data-bind="thr">0</b>%</span><span class="k-brk">BRK <b data-bind="brk">0</b>%</span><span class="k-drs" data-bind="drs">DRS</span></div>
-      </section>
-    </div>
-    <figcaption class="wall__cap"><span>FIG. 01 · PIT WALL</span><span>Simulated data. Your project dashboard will be much simpler.</span></figcaption>
-  </figure>
-
   <div class="intro">
     <div class="intro__logo"><img src="assets/zephyr-logo.png" alt="Zephyr Dynamics mark"></div>
     <p class="intro__text">
       Zephyr Dynamics is a small build studio for people, clubs and race teams. Websites, apps, personal assistants and AI agents — scoped small, built fast, and sold at <b>one clear price</b>. No quotes. No jargon. One person you actually talk to.
     </p>
   </div>
+
+  <figure class="show" aria-label="Examples of what Zephyr builds: a website, a phone app, a customer-service assistant, and easy changes. The business shown is made up.">
+    <div class="show__bar">
+      <h2 class="show__title">What you get</h2>
+      <p class="show__sub">A made-up café, <b>Harbor Coffee</b>, shows what each one looks like.</p>
+    </div>
+
+    <div class="show__grid">
+
+      <!-- 1. website -->
+      <section class="pnl">
+        <span class="tag">A website that works</span>
+        <div class="pnl__body">
+          <div class="browser" aria-hidden="true">
+            <div class="browser__bar"><i></i><i></i><i></i><span>harborcoffee.com</span></div>
+            <div class="browser__view">
+              <div class="site">
+                <div class="site__nav"><b>Harbor Coffee</b><span>Menu</span><span>Visit</span></div>
+                <div class="site__hero">
+                  <h4>Small-batch roasts, brewed daily.</h4>
+                  <p>Come in for a cup or take a bag home.</p>
+                  <span class="site__btn">Order online</span>
+                </div>
+                <div class="site__sec">
+                  <h5>Today's menu</h5>
+                  <div class="site__row"><span>Flat white</span><b>$4.50</b></div>
+                  <div class="site__row"><span>Cold brew</span><b>$4.00</b></div>
+                  <div class="site__row"><span>Almond croissant</span><b>$3.75</b></div>
+                  <div class="site__row"><span>House beans, 12 oz</span><b>$14.00</b></div>
+                </div>
+                <div class="site__sec site__sec--alt">
+                  <h5>Visit us</h5>
+                  <p>12 Harbor Street<br>Open daily 7am to 4pm</p>
+                  <span class="site__btn site__btn--ghost">Get directions</span>
+                </div>
+                <div class="site__sec">
+                  <h5>Join the list</h5>
+                  <div class="site__field">you@email.com</div>
+                  <span class="site__btn">Sign up</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="cap">Clean, fast, and made to work on any phone.</p>
+        </div>
+      </section>
+
+      <!-- 2. phone app -->
+      <section class="pnl">
+        <span class="tag">An app in your pocket</span>
+        <div class="pnl__body">
+          <div class="phone" aria-hidden="true">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <div class="app__head"><small>Harbor Coffee</small><b>Today</b></div>
+              <ul class="tasks" data-bind="tasks">
+                <li><i></i><span>Pack 3 online orders</span></li>
+                <li><i></i><span>Reorder oat milk</span></li>
+                <li><i></i><span>Reply to catering request</span></li>
+                <li><i></i><span>Post Friday's special</span></li>
+              </ul>
+              <div class="app__prog"><div class="app__bar"><div data-bind="bar"></div></div><small><b data-bind="count">0</b> of 4 done</small></div>
+            </div>
+          </div>
+          <p class="cap">A small app that does one job for you.</p>
+        </div>
+      </section>
+
+      <!-- 3. assistant -->
+      <section class="pnl">
+        <span class="tag">An assistant that answers</span>
+        <div class="pnl__body">
+          <div class="chat" aria-hidden="true">
+            <div class="chat__head"><span class="chat__dot"></span><b>Harbor Coffee</b><small>Assistant</small></div>
+            <div class="chat__log" data-bind="chat"></div>
+          </div>
+          <p class="cap">Answers your customers' questions, any time of day.</p>
+        </div>
+      </section>
+
+      <!-- 4. easy changes -->
+      <section class="pnl">
+        <span class="tag">Changes made easy</span>
+        <div class="pnl__body">
+          <div class="edit" aria-hidden="true">
+            <div class="pv">
+              <small>harborcoffee.com</small>
+              <h4 data-bind="pv-h">Welcome to Harbor Coffee</h4>
+              <p>Small-batch roasts, brewed daily.</p>
+              <span class="pv__btn" data-bind="pv-btn">Order online</span>
+              <p class="pv__hrs" data-bind="pv-hrs">Open daily 7am to 4pm</p>
+            </div>
+            <div class="edit__log" data-bind="edit-log"></div>
+            <div class="edit__bar"><span data-bind="edit-in"></span><i class="edit__caret"></i></div>
+          </div>
+          <p class="cap">Just tell us what to change, in plain words.</p>
+        </div>
+      </section>
+    </div>
+    <figcaption class="show__cap"><span>Example only. Harbor Coffee isn't a real business.</span></figcaption>
+  </figure>
+
 </section>
 
 <!-- ============ WHAT WE BUILD ============ -->
@@ -410,7 +393,7 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script src="js/wall.js"></script>
+<script src="js/showroom.js"></script>
 <script src="js/title.js"></script>
 </body>
 </html>
