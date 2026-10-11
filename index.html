@@ -21,9 +21,9 @@
 <meta name="twitter:image" content="https://dose2x.github.io/zephyr-dynamics/assets/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Michroma&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800&family=JetBrains+Mono:wght@400;500;700&family=Michroma&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/showroom.css">
+<link rel="stylesheet" href="css/demos.css">
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
@@ -79,107 +79,6 @@
     </p>
   </div>
 
-  <figure class="show" aria-label="Examples of what Zephyr builds: a website, a phone app, a customer-service assistant, and easy changes. The business shown is made up.">
-    <div class="show__bar">
-      <h2 class="show__title">What you get</h2>
-      <p class="show__sub">A made-up café, <b>Harbor Coffee</b>, shows what each one looks like.</p>
-    </div>
-
-    <div class="show__grid">
-
-      <!-- 1. website -->
-      <section class="pnl">
-        <span class="tag">A website that works</span>
-        <div class="pnl__body">
-          <div class="browser" aria-hidden="true">
-            <div class="browser__bar"><i></i><i></i><i></i><span>harborcoffee.com</span></div>
-            <div class="browser__view">
-              <div class="site">
-                <div class="site__nav"><b>Harbor Coffee</b><span>Menu</span><span>Visit</span></div>
-                <div class="site__hero">
-                  <h4>Small-batch roasts, brewed daily.</h4>
-                  <p>Come in for a cup or take a bag home.</p>
-                  <span class="site__btn">Order online</span>
-                </div>
-                <div class="site__sec">
-                  <h5>Today's menu</h5>
-                  <div class="site__row"><span>Flat white</span><b>$4.50</b></div>
-                  <div class="site__row"><span>Cold brew</span><b>$4.00</b></div>
-                  <div class="site__row"><span>Almond croissant</span><b>$3.75</b></div>
-                  <div class="site__row"><span>House beans, 12 oz</span><b>$14.00</b></div>
-                </div>
-                <div class="site__sec site__sec--alt">
-                  <h5>Visit us</h5>
-                  <p>12 Harbor Street<br>Open daily 7am to 4pm</p>
-                  <span class="site__btn site__btn--ghost">Get directions</span>
-                </div>
-                <div class="site__sec">
-                  <h5>Join the list</h5>
-                  <div class="site__field">you@email.com</div>
-                  <span class="site__btn">Sign up</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="cap">Clean, fast, and made to work on any phone.</p>
-        </div>
-      </section>
-
-      <!-- 2. phone app -->
-      <section class="pnl">
-        <span class="tag">An app in your pocket</span>
-        <div class="pnl__body">
-          <div class="phone" aria-hidden="true">
-            <div class="phone__notch"></div>
-            <div class="phone__screen">
-              <div class="app__head"><small>Harbor Coffee</small><b>Today</b></div>
-              <ul class="tasks" data-bind="tasks">
-                <li><i></i><span>Pack 3 online orders</span></li>
-                <li><i></i><span>Reorder oat milk</span></li>
-                <li><i></i><span>Reply to catering request</span></li>
-                <li><i></i><span>Post Friday's special</span></li>
-              </ul>
-              <div class="app__prog"><div class="app__bar"><div data-bind="bar"></div></div><small><b data-bind="count">0</b> of 4 done</small></div>
-            </div>
-          </div>
-          <p class="cap">A small app that does one job for you.</p>
-        </div>
-      </section>
-
-      <!-- 3. assistant -->
-      <section class="pnl">
-        <span class="tag">An assistant that answers</span>
-        <div class="pnl__body">
-          <div class="chat" aria-hidden="true">
-            <div class="chat__head"><span class="chat__dot"></span><b>Harbor Coffee</b><small>Assistant</small></div>
-            <div class="chat__log" data-bind="chat"></div>
-          </div>
-          <p class="cap">Answers your customers' questions, any time of day.</p>
-        </div>
-      </section>
-
-      <!-- 4. easy changes -->
-      <section class="pnl">
-        <span class="tag">Changes made easy</span>
-        <div class="pnl__body">
-          <div class="edit" aria-hidden="true">
-            <div class="pv">
-              <small>harborcoffee.com</small>
-              <h4 data-bind="pv-h">Welcome to Harbor Coffee</h4>
-              <p>Small-batch roasts, brewed daily.</p>
-              <span class="pv__btn" data-bind="pv-btn">Order online</span>
-              <p class="pv__hrs" data-bind="pv-hrs">Open daily 7am to 4pm</p>
-            </div>
-            <div class="edit__log" data-bind="edit-log"></div>
-            <div class="edit__bar"><span data-bind="edit-in"></span><i class="edit__caret"></i></div>
-          </div>
-          <p class="cap">Just tell us what to change, in plain words.</p>
-        </div>
-      </section>
-    </div>
-    <figcaption class="show__cap"><span>Example only. Harbor Coffee isn't a real business.</span></figcaption>
-  </figure>
-
 </section>
 
 <!-- ============ WHAT WE BUILD ============ -->
@@ -193,37 +92,187 @@
     </div>
   </div>
 
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <clipPath id="buoyClip"><circle cx="12" cy="12" r="10"/></clipPath>
+      <symbol id="hc-buoy" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" fill="#0f3b36"/>
+        <rect x="2" y="9" width="20" height="6" fill="#f4b400" clip-path="url(#buoyClip)"/>
+        <circle cx="12" cy="12" r="2.2" fill="#e6ebe7"/>
+      </symbol>
+    </defs>
+  </svg>
+
   <div class="cards">
+
+    <!-- Starter Site -->
     <article class="card reveal">
-      <header><span>01</span><span>WEB</span></header>
+      <div class="card__demo" aria-hidden="true">
+        <div class="browser">
+          <div class="browser__bar"><i></i><i></i><i></i><span>harborcoffee.com</span></div>
+          <div class="browser__view"><div class="pan"><div class="site hc">
+            <header class="hc__nav">
+              <span class="hc__logo"><svg><use href="#hc-buoy"/></svg>Harbor Coffee</span>
+              <nav><span>Menu</span><span>Beans</span><span>Visit</span></nav>
+              <span class="hc__cta">Order ahead</span>
+            </header>
+            <section class="hc__hero">
+              <div class="hc__copy">
+                <h4>Roasted on the waterfront. Poured all day.</h4>
+                <p>Small-batch coffee and fresh pastries, one block from the ferry.</p>
+                <div class="hc__btns"><span class="hc__cta hc__cta--lg">Order ahead</span><span class="hc__link">See the menu</span></div>
+              </div>
+              <aside class="hc__board">
+                <div class="hc__bh"><b>Now pouring</b><span><i></i>Open until 4 pm</span></div>
+                <ul>
+                  <li><span>Espresso</span><em>Guji, Ethiopia</em><b>7:00</b></li>
+                  <li><span>Batch brew</span><em>Huila, Colombia</em><b>7:00</b></li>
+                  <li><span>Cold brew</span><em>House blend</em><b>9:00</b></li>
+                  <li><span>Pastries</span><em>Baked this morning</em><b>7:30</b></li>
+                </ul>
+              </aside>
+            </section>
+            <section class="hc__sec">
+              <h5>Menu</h5>
+              <div class="hc__cols">
+                <ul>
+                  <li><span>Flat white</span><b>4.50</b></li>
+                  <li><span>Cortado</span><b>4.25</b></li>
+                  <li><span>Oat latte</span><b>5.25</b></li>
+                  <li><span>Cold brew</span><b>4.00</b></li>
+                </ul>
+                <ul>
+                  <li><span>Almond croissant</span><b>3.75</b></li>
+                  <li><span>Cardamom bun</span><b>4.00</b></li>
+                  <li><span>Egg and cheddar roll</span><b>6.50</b></li>
+                  <li><span>Seasonal tart</span><b>4.75</b></li>
+                </ul>
+              </div>
+            </section>
+            <section class="hc__sec hc__sec--sage">
+              <h5>Beans to take home</h5>
+              <div class="hc__tags">
+                <div class="hc__tag"><small>Guji, Ethiopia</small><b>Blueberry, jasmine</b><span>12 oz · $16</span></div>
+                <div class="hc__tag"><small>Huila, Colombia</small><b>Red apple, caramel</b><span>12 oz · $15</span></div>
+                <div class="hc__tag"><small>House blend</small><b>Cocoa, toasted almond</b><span>12 oz · $14</span></div>
+              </div>
+            </section>
+            <section class="hc__sec hc__visit">
+              <div>
+                <h5>Find us</h5>
+                <p>12 Harbor Street<br>Next to the ferry landing</p>
+                <table>
+                  <tr><td>Mon to Fri</td><td>7 am to 4 pm</td></tr>
+                  <tr><td>Sat and Sun</td><td>8 am to 3 pm</td></tr>
+                </table>
+              </div>
+              <svg class="hc__map" viewBox="0 0 280 190">
+                <rect width="280" height="190" fill="#dfe8e3"/>
+                <path d="M0 120 C60 100 110 140 170 120 S250 100 280 112 V190 H0Z" fill="#b6d1d3"/>
+                <path d="M30 120 V150 M44 118 V152 M58 116 V154" stroke="#0f3b36" stroke-width="5" stroke-linecap="round"/>
+                <path d="M0 60 H280 M120 0 V120 M200 0 V110" stroke="#fff" stroke-width="9"/>
+                <circle cx="120" cy="60" r="9" fill="#d6362b"/><circle cx="120" cy="60" r="3.5" fill="#fff"/>
+              </svg>
+            </section>
+            <footer class="hc__foot"><span class="hc__logo"><svg><use href="#hc-buoy"/></svg>Harbor Coffee</span><span>@harborcoffee</span></footer>
+          </div></div></div>
+        </div>
+      </div>
       <h3>Starter Site</h3>
       <p>A clean, fast, mobile-ready site for you, your race team, business or club. Home, about, contact, info, done.</p>
       <ul><li>Up to 4 sections</li><li>Contact form</li><li>Hosting set up</li><li>1 round of edits*</li></ul>
       <footer><b>$250</b><span>fixed</span></footer>
     </article>
+
+    <!-- Club & Race Team Site -->
     <article class="card reveal">
-      <header><span>02</span><span>TEAM</span></header>
+      <div class="card__demo" aria-hidden="true">
+        <div class="browser">
+          <div class="browser__bar"><i></i><i></i><i></i><span>harborcitykarting.com</span></div>
+          <div class="browser__view"><div class="pan"><div class="site kc">
+            <header class="kc__nav">
+              <span class="kc__logo"><b>HCK</b>Harbor City Karting</span>
+              <nav><span>Races</span><span>Standings</span><span>Join</span></nav>
+            </header>
+            <section class="kc__hero">
+              <div class="kc__r">R4</div>
+              <div>
+                <h4>Saturday 18 October</h4>
+                <p>Harbor Raceway. Gates open at 8:00, first heat at 9:00.</p>
+                <span class="kc__btn">Register to race</span>
+              </div>
+            </section>
+            <div class="kc__check"></div>
+            <section class="kc__sec">
+              <h5>Standings after round 3</h5>
+              <table class="kc__tbl">
+                <tr><th>Pos</th><th>Driver</th><th>Pts</th></tr>
+                <tr class="lead"><td>1</td><td>Dana Ruiz</td><td>74</td></tr>
+                <tr><td>2</td><td>Sam Okafor</td><td>69</td></tr>
+                <tr><td>3</td><td>Lee Park</td><td>61</td></tr>
+                <tr><td>4</td><td>Jo Mitchell</td><td>55</td></tr>
+                <tr><td>5</td><td>Ari Cohen</td><td>48</td></tr>
+              </table>
+            </section>
+            <section class="kc__sec kc__sec--dark">
+              <h5>Thanks to our sponsors</h5>
+              <div class="kc__sp"><span>Tidewater Tyres</span><span>Pier 9 Diner</span><span>Marlow Insurance</span><span>Kite Print</span></div>
+            </section>
+            <footer class="kc__foot">Harbor City Karting Club · New drivers welcome</footer>
+          </div></div></div>
+        </div>
+      </div>
       <h3>Club &amp; Race Team Site</h3>
       <p>Schedule, roster, results, sponsors, sign-up. Everything your group keeps answering in the chat.</p>
       <ul><li>Up to 6 sections</li><li>Schedule &amp; results</li><li>Sponsor wall</li><li>2 rounds of edits*</li></ul>
       <footer><b>$450</b><span>fixed</span></footer>
     </article>
+
+    <!-- Personal Assistant App -->
     <article class="card reveal">
-      <header><span>03</span><span>APP</span></header>
+      <div class="card__demo card__demo--center" aria-hidden="true">
+        <div class="phone">
+          <div class="phone__notch"></div>
+          <div class="phone__screen">
+            <div class="app__top">
+              <div><small>Tuesday 14 Oct</small><b>Today</b></div>
+              <div class="app__ring">
+                <svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="16" class="bg"/><circle cx="20" cy="20" r="16" class="fg" data-bind="ring"/></svg>
+                <span><b data-bind="count">0</b>/4</span>
+              </div>
+            </div>
+            <ul class="tasks" data-bind="tasks">
+              <li><i></i><span>Pack online orders</span><time>10:30</time></li>
+              <li><i></i><span>Reorder oat milk</span><time>12:00</time></li>
+              <li><i></i><span>Answer catering email</span><time>2:00</time></li>
+              <li><i></i><span>Post Friday special</span><time>3:30</time></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <h3>Personal Assistant App</h3>
       <p>A little app that does one job for you: tracks it, reminds you, keeps it in one place. Lives on your phone.</p>
       <ul><li>One focused job</li><li>Installs like an app</li><li>Private to you</li><li>1 round of edits*</li></ul>
       <footer><b>$400</b><span>fixed</span></footer>
     </article>
+
+    <!-- AI Agent -->
     <article class="card reveal">
-      <header><span>04</span><span>AI</span></header>
+      <div class="card__demo card__demo--center" aria-hidden="true">
+        <div class="chat">
+          <div class="chat__head"><svg><use href="#hc-buoy"/></svg><div><b>Harbor Coffee</b><small>Replies instantly</small></div></div>
+          <div class="chat__log" data-bind="chat"></div>
+          <div class="chat__chips"><span>Opening hours</span><span>Ship beans?</span></div>
+          <div class="chat__input"><span>Ask a question</span><i></i></div>
+        </div>
+      </div>
       <h3>AI Agent</h3>
       <p>An assistant that answers questions, sorts the busywork, or looks things up. Trained on your stuff, explained in plain words.</p>
       <ul><li>One clear task</li><li>Your own info</li><li>Plain-English handoff</li><li>2 rounds of tuning*</li></ul>
       <footer><a class="inquire" href="#hello">Inquire <span aria-hidden="true">↗</span></a><span>contact us</span></footer>
     </article>
   </div>
-  <p class="fineprint">* Extra rounds of edits are available on request. Prices are starter packages. Bigger idea? Tell us — we’ll tell you the price before we start. Always.</p>
+  <p class="fineprint">* Extra rounds of edits are available on request. Prices are starter packages. Bigger idea? Tell us — we’ll tell you the price before we start. Always.<br>Harbor Coffee and Harbor City Karting are made-up examples.</p>
 </section>
 
 <!-- ============ WHAT YOU WON'T GET ============ -->
@@ -393,7 +442,7 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script src="js/showroom.js"></script>
+<script src="js/demos.js"></script>
 <script src="js/title.js"></script>
 </body>
 </html>

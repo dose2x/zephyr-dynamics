@@ -134,7 +134,6 @@ ul, ol { list-style: none; }
   transition: transform .3s ease, border-color .3s, background .3s;
 }
 .card:hover { transform: translateY(-6px); border-color: var(--signal); background: linear-gradient(180deg, rgba(46, 111, 176, .3), rgba(46, 111, 176, .08)); }
-.card > header { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: .16em; color: var(--sky); }
 .card h3 { font-family: var(--display); font-weight: 400; font-size: clamp(17px, 1.7vw, 22px); line-height: 1.2; text-transform: uppercase; }
 .card p { font-size: 15px; color: #b9c9db; }
 .card ul { font-family: var(--mono); font-size: 12px; display: grid; gap: 6px; margin-top: auto; padding-top: 12px; border-top: 1px dashed rgba(120, 180, 230, .4); }
