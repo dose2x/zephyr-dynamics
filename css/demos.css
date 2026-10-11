@@ -71,40 +71,10 @@
 .hc__foot .hc__logo { font-size: 24px; }
 .hc__foot .hc__logo svg { width: 30px; height: 30px; border-radius: 50%; outline: 2px solid var(--fog); }
 
-/* ===== Harbor City Karting: race-app identity (graphite, flag red, Titillium Web) ===== */
-.gp { --ink: #15151e; --card: #1f1f2b; --line: #33334a; --red: #e10600; --mute: #9a9ab5; --purple: #9b30ff; background: var(--ink); color: #fff; font-family: "Titillium Web", var(--body); }
-.gp__nav { display: flex; align-items: center; gap: 28px; padding: 18px 36px; border-bottom: 1px solid var(--line); }
-.gp__logo { display: inline-flex; align-items: center; gap: 12px; font: 900 27px/1 "Titillium Web", sans-serif; letter-spacing: .02em; }
-.gp__logo i { width: 28px; height: 18px; background: var(--red); transform: skewX(-24deg); }
-.gp__nav nav { margin-left: auto; display: flex; gap: 24px; font: 600 14px "Titillium Web", sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--mute); }
-.gp__hero { padding: 40px 36px 38px; border-bottom: 1px solid var(--line); background: linear-gradient(115deg, var(--ink) 52%, #3a0b0b); }
-.gp__round { display: inline-block; padding: 5px 13px 4px; background: var(--red); font: 700 13px "Titillium Web", sans-serif; letter-spacing: .1em; text-transform: uppercase; }
-.gp__hero h4 { margin: 16px 0 8px; font: 900 66px/.93 "Titillium Web", sans-serif; letter-spacing: -.01em; text-transform: uppercase; }
-.gp__when { margin-bottom: 24px; font: 600 18px "Titillium Web", sans-serif; color: var(--mute); }
-.gp__count { display: flex; gap: 12px; margin-bottom: 28px; }
-.gp__count div { min-width: 100px; padding: 12px 18px; background: var(--card); border-left: 4px solid var(--red); }
-.gp__count b { display: block; font: 900 48px/1 "Titillium Web", sans-serif; font-variant-numeric: tabular-nums; }
-.gp__count span { font: 600 12px "Titillium Web", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--mute); }
-.gp__btn { display: inline-block; padding: 14px 28px 12px; background: #fff; color: var(--ink); font: 900 18px/1 "Titillium Web", sans-serif; letter-spacing: .05em; text-transform: uppercase; }
-.gp__sec { padding: 34px 36px 8px; }
-.gp__bar { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 14px; }
-.gp__bar h5 { font: 900 32px/1 "Titillium Web", sans-serif; text-transform: uppercase; letter-spacing: -.005em; }
-.gp__bar span { font: 600 15px "Titillium Web", sans-serif; color: var(--mute); }
-.gp__tbl li { display: grid; grid-template-columns: 38px 5px 1fr 1fr 52px; align-items: center; gap: 14px; padding: 13px 14px; border-bottom: 1px solid var(--line); font: 600 19px "Titillium Web", sans-serif; }
-.gp__tbl li b { font: 900 21px "Titillium Web", sans-serif; color: var(--mute); }
-.gp__tbl li i { width: 5px; height: 28px; border-radius: 2px; background: var(--t); }
-.gp__tbl li em { font-style: normal; font-size: 16px; color: var(--mute); }
-.gp__tbl li strong { text-align: right; font: 900 22px "Titillium Web", sans-serif; font-variant-numeric: tabular-nums; }
-.gp__tbl li.lead { background: var(--card); border-left: 4px solid var(--red); }
-.gp__tbl li.lead b { color: #fff; }
-.gp__res { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding-bottom: 28px; }
-.gp__res div { padding: 14px 16px; background: var(--card); border-top: 3px solid var(--line); }
-.gp__res div:first-child { border-top-color: var(--red); }
-.gp__res small { display: block; font: 900 13px "Titillium Web", sans-serif; color: var(--mute); letter-spacing: .1em; }
-.gp__res b { display: block; margin: 4px 0 6px; font: 900 22px/1.05 "Titillium Web", sans-serif; text-transform: uppercase; }
-.gp__res span { font: 600 15px var(--mono); color: var(--mute); }
-.gp__fl { padding: 3px 10px; background: var(--purple); color: #fff !important; font: 700 13px "Titillium Web", sans-serif !important; }
-.gp__foot { padding: 20px 36px 26px; border-top: 1px solid var(--line); font: 600 14px "Titillium Web", sans-serif; color: var(--mute); }
+/* ===== team site: a real screenshot of ohndracing.com ===== */
+a.card__demo--link { display: block; color: inherit; text-decoration: none; cursor: pointer; transition: border-color .25s, box-shadow .25s; }
+a.card__demo--link:hover, a.card__demo--link:focus-visible { border-color: var(--signal); box-shadow: 0 0 0 2px var(--signal); outline: none; }
+.shot img { display: block; width: 720px; height: auto; }
 
 /* ===== phone shell ===== */
 .phone { position: relative; width: 200px; height: 304px; padding: 8px; border-radius: 30px; background: #1d1b3a; border: 2px solid #3a3868; box-shadow: 0 14px 30px rgba(0, 0, 0, .45); }
