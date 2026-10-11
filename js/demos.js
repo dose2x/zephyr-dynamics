@@ -19,6 +19,11 @@
       pan.style.height = total + 'px';
       pan.style.setProperty('--pan', Math.max(0, total - view.clientHeight) + 'px');
     });
+    cards.querySelectorAll('.phone__screen').forEach(function (scr) {
+      var fl = scr.querySelector('.fl'), k = scr.clientWidth / 300;
+      fl.style.setProperty('--kp', k);
+      fl.style.setProperty('--hh', (scr.clientHeight / k) + 'px');
+    });
   }
   fit();
   if (window.ResizeObserver) new ResizeObserver(fit).observe(cards); else window.addEventListener('resize', fit);
@@ -49,7 +54,8 @@
 
   /* ---------- phone app ---------- */
   var tasks = B('tasks').querySelectorAll('li'), ring = B('ring'), count = B('count');
-  var CIRC = 100.53;
+  var CIRC = ring.getTotalLength();
+  ring.style.strokeDasharray = CIRC; ring.style.strokeDashoffset = CIRC;
   function setDone(n) {
     for (var i = 0; i < tasks.length; i++) tasks[i].classList.toggle('done', i < n);
     ring.style.strokeDashoffset = CIRC * (1 - n / tasks.length);
@@ -67,9 +73,9 @@
 
   /* ---------- assistant chat ---------- */
   var QA = [
-    ['What time do you open on Sunday?', 'We open at 8 am on Sundays. Want me to save you a table?'],
-    ['Do you ship your beans?', 'Yes, we ship nationwide. Orders over $40 ship free.'],
-    ['Do you have oat milk?', 'We do. Oat, almond or whole. Anything else I can help with?']
+    ['Do you take walk-ins?', 'For emergencies, yes. Cleanings are best booked. Want me to find a time?'],
+    ['Cleaning on Friday morning?', 'Friday has 9:30 and 11:00 open. Which works for you?'],
+    ['9:30 please', 'Booked: Friday at 9:30 am. A confirmation is on its way to your email.']
   ];
   var log = B('chat');
   function trim(el, max) { while (el.children.length > max) el.removeChild(el.firstChild); }
