@@ -162,24 +162,46 @@ ul, ol { list-style: none; }
 .process__head .rule { justify-content: flex-start; color: var(--steel); }
 .process h2 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 7vw, 100px); line-height: 1.02; text-transform: uppercase; margin: 14px 0 clamp(22px, 3vw, 40px); }
 .process__grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: var(--pad); align-items: stretch; }
-.track { border: 1px solid var(--navy); background: var(--paper); display: flex; flex-direction: column; }
-.track svg { width: 100%; height: auto; display: block; flex: 1; }
-.track__grid path { stroke: var(--ice-2); stroke-width: 1; fill: none; }
-.track__base { fill: none; stroke: var(--navy); stroke-width: 22; stroke-linejoin: round; }
-.track__line { stroke: var(--paper); stroke-width: 18; stroke-dasharray: none; }
-.seg { fill: none; stroke-width: 18; stroke-linecap: butt; opacity: .0; transition: opacity .25s; }
+.track { border: 1px solid var(--navy); background: var(--paper); display: flex; flex-direction: column; overflow: hidden; }
+
+/* 3D circuit: a tilted "scale model" of the lap */
+.track__stage { position: relative; flex: 1; min-height: clamp(260px, 32vw, 420px); display: grid; place-items: center; perspective: 1100px; perspective-origin: 50% 20%; overflow: hidden;
+  background: radial-gradient(120% 90% at 50% 30%, var(--paper) 40%, var(--ice) 100%); }
+.track__tilt { position: relative; width: 88%; aspect-ratio: 800 / 450; transform-style: preserve-3d; transform: translateY(4%) rotateX(var(--rx, 54deg)) rotateZ(var(--rz, -16deg)); }
+.track__floor { position: absolute; inset: -22% -14%; transform: translateZ(-1px);
+  background-image: linear-gradient(var(--ice-2) 1px, transparent 1px), linear-gradient(90deg, var(--ice-2) 1px, transparent 1px);
+  background-size: 6.25% 11.1%; -webkit-mask-image: radial-gradient(closest-side, #000 55%, transparent); mask-image: radial-gradient(closest-side, #000 55%, transparent); }
+.track__layer { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.track__shadow { transform: translate3d(1.5%, 2.5%, 0); filter: blur(7px); opacity: .32; }
+.track__shadow path { fill: none; stroke: var(--ink); stroke-width: 30; stroke-linejoin: round; }
+.slab { transform: translateZ(calc(var(--z) * 2px)); }
+.slab path { fill: none; stroke: #0d2440; stroke-width: 26; stroke-linejoin: round; }
+.slab[style*="--z:6"] path { stroke: var(--navy); }
+.track__top { transform: translateZ(14px); }
+.track__base { fill: none; stroke: var(--navy); stroke-width: 26; stroke-linejoin: round; }
+.track__line { fill: none; stroke: var(--paper); stroke-width: 18; stroke-linejoin: round; }
+.track__center { fill: none; stroke: var(--ice-2); stroke-width: 1.5; stroke-dasharray: .8 1.6; }
+.seg { fill: none; stroke-width: 18; stroke-linecap: butt; opacity: 0; transition: opacity .3s; }
 .seg-0 { stroke: var(--steel); stroke-dasharray: 25 75; stroke-dashoffset: 0; }
 .seg-1 { stroke: var(--sky);   stroke-dasharray: 25 75; stroke-dashoffset: -25; }
-.seg-2 { stroke: var(--navy);  stroke-dasharray: 25 75; stroke-dashoffset: -50; }
-.seg-3 { stroke: var(--signal);stroke-dasharray: 25 75; stroke-dashoffset: -75; }
+.seg-2 { stroke: #35c2d8; stroke-dasharray: 25 75; stroke-dashoffset: -50; }
+.seg-3 { stroke: var(--signal); stroke-dasharray: 25 75; stroke-dashoffset: -75; }
 .track[data-active="0"] .seg-0, .track[data-active="1"] .seg-1, .track[data-active="2"] .seg-2, .track[data-active="3"] .seg-3 { opacity: 1; }
 .sf line { stroke: var(--ink); stroke-width: 6; stroke-dasharray: 4 4; }
-.sf text, .turns text { font-family: var(--mono); font-size: 11px; fill: var(--navy); letter-spacing: .1em; }
-.turns text { fill: var(--steel); font-weight: 700; }
+.sf text { font-family: var(--mono); font-size: 12px; fill: var(--navy); letter-spacing: .1em; }
 #dot { fill: var(--signal); stroke: var(--ink); stroke-width: 2; }
-#dot-ring { fill: none; stroke: var(--signal); stroke-width: 1.5; opacity: .5; animation: ping 1.6s ease-out infinite; transform-box: fill-box; transform-origin: center; }
-@keyframes ping { from { transform: scale(.6); opacity: .8; } to { transform: scale(1.5); opacity: 0; } }
-.track__cap { display: flex; justify-content: space-between; padding: 10px 16px; border-top: 1px solid var(--navy); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; }
+
+/* upright marker that rides the lap */
+.beacon { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; pointer-events: none; will-change: transform; }
+.beacon__stem { position: absolute; bottom: 0; left: -1px; width: 2px; height: 58px; background: linear-gradient(var(--navy), rgba(20, 48, 79, .15)); }
+.beacon__tag { position: absolute; bottom: 58px; left: 0; translate: -50% 0; display: flex; align-items: center; gap: 8px; padding: 6px 10px 6px 6px; white-space: nowrap;
+  background: var(--navy); color: var(--ice); border: 1px solid var(--navy); box-shadow: 0 8px 18px rgba(8, 18, 31, .25); }
+.beacon__tag b { display: grid; place-items: center; min-width: 28px; height: 24px; background: var(--signal); color: var(--ink); font-family: var(--display); font-size: 13px; font-weight: 400; }
+.beacon__tag em { font-style: normal; font-family: var(--display); font-size: 12px; text-transform: uppercase; }
+.track__cap { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--navy); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; }
+.track__hint { color: var(--steel); }
+@media (hover: none) { .track__hint { display: none; } }
+@media (max-width: 700px) { .track__stage { min-height: 300px; } .track__tilt { width: 112%; transform: translateY(6%) rotateX(var(--rx, 54deg)) rotateZ(var(--rz, -16deg)); } .beacon__tag em { font-size: 11px; } }
 
 .sectors { display: grid; gap: 10px; }
 .sector {
