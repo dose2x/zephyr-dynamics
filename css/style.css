@@ -227,9 +227,11 @@ ul, ol { list-style: none; }
 .partners__group img { height: clamp(44px, 5vw, 64px); width: auto; flex: none; }
 
 /* ---------- loop video band ---------- */
-.loop { position: relative; background: #000 url("https://i.ytimg.com/vi/zxWAXfaKe2Q/maxresdefault.jpg") center / cover no-repeat; border-block: 1px solid var(--navy); }
-.loop__frame { position: relative; height: clamp(260px, 46vw, 680px); overflow: hidden; container-type: size; pointer-events: none; }
-.loop__frame iframe { position: absolute; top: 50%; left: 50%; translate: -50% -50%; width: max(100cqw, 177.78cqh); height: max(100cqh, 56.25cqw); border: 0; opacity: 0; transition: opacity .8s ease; }
+/* The band is 20:9, so it shows the top 80% of the 16:9 video and the bottom 20% is cut off. */
+.loop { position: relative; background: #000; border-block: 1px solid var(--navy); }
+.loop__frame { position: relative; aspect-ratio: 20 / 9; max-height: 90vh; overflow: hidden; container-type: size; pointer-events: none;
+  background: url("https://i.ytimg.com/vi/zxWAXfaKe2Q/maxresdefault.jpg") center top / cover no-repeat; }
+.loop__frame iframe { position: absolute; top: 0; left: 50%; translate: -50% 0; width: max(100cqw, 222.22cqh); aspect-ratio: 16 / 9; height: auto; border: 0; opacity: 0; transition: opacity .8s ease; }
 .loop.is-playing iframe { opacity: 1; }
 .loop::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(8, 18, 31, .35), transparent 22%, transparent 78%, rgba(8, 18, 31, .35)); }
 
