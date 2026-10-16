@@ -199,8 +199,6 @@ ul, ol { list-style: none; }
 .beacon__tag b { display: grid; place-items: center; min-width: 28px; height: 24px; background: var(--signal); color: var(--ink); font-family: var(--display); font-size: 13px; font-weight: 400; }
 .beacon__tag em { font-style: normal; font-family: var(--display); font-size: 12px; text-transform: uppercase; }
 .track__cap { display: flex; justify-content: space-between; gap: 12px; padding: 10px 16px; border-top: 1px solid var(--navy); font-family: var(--mono); font-size: 11px; letter-spacing: .08em; }
-.track__hint { color: var(--steel); }
-@media (hover: none) { .track__hint { display: none; } }
 @media (max-width: 700px) { .track__stage { min-height: 300px; } .track__tilt { width: 112%; transform: translateY(6%) rotateX(var(--rx, 54deg)) rotateZ(var(--rz, -16deg)); } .beacon__tag em { font-size: 11px; } }
 
 .sectors { display: grid; gap: 10px; }
