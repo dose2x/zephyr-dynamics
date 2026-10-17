@@ -85,7 +85,7 @@
       var qa = QA[k++ % QA.length];
       sleep(900).then(function () { log.appendChild(div('msg msg--me', qa[0])); trim(log, 4); return sleep(600); })
         .then(function () {
-          var t = div('msg msg--bot msg--typing'); t.innerHTML = '<i></i><i></i><i></i>';
+          var t = div('msg msg--bot msg--typing'); for (var d = 0; d < 3; d++) t.appendChild(document.createElement('i'));
           log.appendChild(t); trim(log, 4);
           return sleep(1100).then(function () {
             var bot = div('msg msg--bot'); log.replaceChild(bot, t);
