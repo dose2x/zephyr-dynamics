@@ -42,11 +42,11 @@
 .hc__board { padding: 16px 18px 8px; border-radius: 4px; background: var(--kelp); color: var(--fog); box-shadow: 8px 8px 0 var(--sage); }
 .hc__bh { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 10px; }
 .hc__bh b { font-size: 24px; color: var(--buoy); letter-spacing: .02em; }
-.hc__bh span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: var(--sage); }
+.hc__bh span { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #bcd9cd; }
 .hc__bh i { width: 8px; height: 8px; border-radius: 50%; background: #5fe3a1; }
 .hc__board ul li { display: grid; grid-template-columns: 1fr auto; gap: 0 10px; padding: 10px 0; border-top: 1px dashed rgba(230, 235, 231, .28); }
 .hc__board li span { grid-column: 1; grid-row: 1; font-size: 17px; font-weight: 600; }
-.hc__board li em { grid-column: 1; grid-row: 2; font-style: normal; font-size: 13px; color: var(--sage); }
+.hc__board li em { grid-column: 1; grid-row: 2; font-style: normal; font-size: 13px; color: #bcd9cd; }
 .hc__board li b { grid-column: 2; grid-row: 1 / span 2; align-self: center; font: 600 16px var(--mono); color: var(--buoy); }
 .hc__sec { padding: 38px 36px; }
 .hc__sec .h5 { font-size: 46px; line-height: .9; margin-bottom: 18px; }

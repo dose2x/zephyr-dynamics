@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src 'none'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Zephyr Dynamics — Tech, made easy</title>
 <meta name="description" content="Zephyr is a small build studio for people, clubs and race teams. Websites, apps, assistants and AI agents at one clear, fixed price.">
-<link rel="icon" href="assets/zephyr-logo.png">
+<link rel="icon" href="assets/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Zephyr Dynamics">
 <meta property="og:title" content="Zephyr Dynamics: Tech, made easy">
@@ -23,7 +23,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <link rel="stylesheet" href="css/fonts.css">
 <link rel="preload" href="fonts/michroma.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="fonts/space-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/demos.css">
 <script src="js/boot.js"></script>
@@ -34,7 +34,7 @@
 <!-- ============ TOP BAR ============ -->
 <header class="top">
   <a class="top__brand" href="#top" aria-label="Zephyr Dynamics home">
-    <img src="assets/zephyr-wordmark.png" alt="Zephyr Dynamics">
+    <img src="assets/zephyr-wordmark.webp" alt="Zephyr Dynamics" width="61" height="34">
   </a>
   <nav class="top__nav" aria-label="Main">
     <a href="#build">Build</a>
@@ -79,7 +79,7 @@
   </div>
 
   <div class="intro">
-    <div class="intro__logo"><img src="assets/zephyr-logo.png" alt="Zephyr Dynamics mark"></div>
+    <div class="intro__logo"><img src="assets/zephyr-logo.webp" alt="Zephyr Dynamics mark" width="220" height="220"></div>
     <p class="intro__text">
       Zephyr Dynamics is a small build studio for people, clubs and race teams. Websites, apps, personal assistants and AI agents — scoped small, built fast, and sold at <b>one clear price</b>. No quotes. No jargon. One person you actually talk to.
     </p>
@@ -89,7 +89,6 @@
 
 <!-- ============ WHAT WE BUILD ============ -->
 <section class="dark build" id="build">
-  <div class="rule"><i>✦</i><i>✦</i><span>Four things we build · fixed prices</span><i>✦</i><i>✦</i></div>
   <h2 class="build__title">What we build</h2>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
@@ -256,7 +255,7 @@
 
 <!-- ============ WHAT YOU WON'T GET ============ -->
 <section class="nots">
-  <div class="rule rule--light"><i>✦</i><i>✦</i><span>What you won’t get</span><i>✦</i><i>✦</i></div>
+  <h2 class="nots__title">What you won’t get</h2>
   <ul class="strike" aria-label="What you won’t get">
     <li>Sprint planning</li><li>Scope creep</li><li>Buzzwords</li><li>Surprise invoices</li><li>“Let’s circle back”</li>
   </ul>
@@ -270,8 +269,7 @@
 <!-- ============ PROCESS / TRACK ============ -->
 <section class="process" id="process">
   <div class="process__head">
-    <div class="rule"><i>✦</i><i>✦</i><span>How it works</span><i>✦</i><i>✦</i></div>
-    <h2>One lap.<br>Four sectors.</h2>
+    <h2>How it works<span class="process__sub">One lap. Four sectors.</span></h2>
   </div>
 
   <div class="process__grid">
@@ -309,21 +307,21 @@
     </div>
 
     <ol class="sectors">
-      <li class="sector" data-i="0" tabindex="0">
-        <span class="sector__n">S1</span>
-        <div><h3>Say hello</h3><p>Tell us what you want, in your own words. We reply with the package that fits and the exact price.</p></div>
+      <li class="sector" data-i="0">
+        <span class="sector__n" aria-hidden="true">S1</span>
+        <div><h3><button type="button" class="sector__btn" aria-pressed="false">Say hello</button></h3><p>Tell us what you want, in your own words. We reply with the package that fits and the exact price.</p></div>
       </li>
-      <li class="sector" data-i="1" tabindex="0">
-        <span class="sector__n">S2</span>
-        <div><h3>Pick your lines</h3><p>Choose colors, vibe and the few things that matter. Small scope is the whole point.</p></div>
+      <li class="sector" data-i="1">
+        <span class="sector__n" aria-hidden="true">S2</span>
+        <div><h3><button type="button" class="sector__btn" aria-pressed="false">Pick your lines</button></h3><p>Choose colors, vibe and the few things that matter. Small scope is the whole point.</p></div>
       </li>
-      <li class="sector" data-i="2" tabindex="0">
-        <span class="sector__n">S3</span>
-        <div><h3>We build</h3><p>You get a live preview link while it’s taking shape. Nudge it any time.</p></div>
+      <li class="sector" data-i="2">
+        <span class="sector__n" aria-hidden="true">S3</span>
+        <div><h3><button type="button" class="sector__btn" aria-pressed="false">We build</button></h3><p>You get a live preview link while it’s taking shape. Nudge it any time.</p></div>
       </li>
-      <li class="sector" data-i="3" tabindex="0">
-        <span class="sector__n">S4</span>
-        <div><h3>Checkered flag</h3><p>It goes live, you own it, and you get a plain-English guide for keeping it running.</p></div>
+      <li class="sector" data-i="3">
+        <span class="sector__n" aria-hidden="true">S4</span>
+        <div><h3><button type="button" class="sector__btn" aria-pressed="false">Checkered flag</button></h3><p>It goes live, you own it, and you get a plain-English guide for keeping it running.</p></div>
       </li>
     </ol>
   </div>

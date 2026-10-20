@@ -117,14 +117,23 @@
   });
   stage.addEventListener('pointerleave', function () { aim.on = false; wake(); });
 
+  // step cards: hover or focus previews a step; a click (or Enter / Space) locks it until clicked again
+  var locked = -1;
+  var sectorBtns = Array.prototype.map.call(sectors, function (el) { return el.querySelector('.sector__btn'); });
   sectors.forEach(function (el, i) {
-    function pin() { pinned = true; progress = (i + 0.5) / 4; setProgress(progress); wake(); }
-    function release() { pinned = false; wake(); }
-    el.addEventListener('mouseenter', pin);
+    var b = sectorBtns[i];
+    function preview() { if (locked === -1) { pinned = true; progress = (i + 0.5) / 4; setProgress(progress); wake(); } }
+    function release() { if (locked === -1) { pinned = false; wake(); } }
+    el.addEventListener('mouseenter', preview);
     el.addEventListener('mouseleave', release);
-    el.addEventListener('focus', pin);
-    el.addEventListener('blur', release);
-    el.addEventListener('click', function () { pinned ? release() : pin(); });
+    b.addEventListener('focus', preview);
+    b.addEventListener('blur', release);
+    b.addEventListener('click', function () {
+      if (locked === i) { locked = -1; pinned = false; }
+      else { locked = i; pinned = true; progress = (i + 0.5) / 4; setProgress(progress); }
+      sectorBtns.forEach(function (x, k) { x.setAttribute('aria-pressed', k === locked ? 'true' : 'false'); });
+      wake();
+    });
   });
 
   measure();          // first placement of the marker, even when motion is paused
