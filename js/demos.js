@@ -32,7 +32,7 @@
   /* ---------- run / pause plumbing ---------- */
   var running = false, waiters = [], inView = false;
   function update() {
-    var go = inView && !document.hidden;
+    var go = inView && !document.hidden && !document.documentElement.classList.contains('motion-paused');
     if (go === running) return;
     running = go;
     if (go) { var w = waiters; waiters = []; w.forEach(function (f) { f(); }); }
@@ -106,4 +106,5 @@
   taskLoop(); chatLoop();
   new IntersectionObserver(function (e) { inView = e[0].isIntersecting; update(); }, { threshold: 0.1 }).observe(cards);
   document.addEventListener('visibilitychange', update);
+  document.addEventListener('motionchange', update);
 })();

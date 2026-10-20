@@ -44,7 +44,7 @@
     var letters = svg.querySelectorAll('.M'), visible = true;
     new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(svg);
     setInterval(function () {
-      if (!visible || document.hidden) return;
+      if (!visible || document.hidden || document.documentElement.classList.contains('motion-paused')) return;
       for (var i = 0; i < letters.length; i++) letters[i].style.animation = 'none';
       void svg.getBoundingClientRect();                                   // force reflow so the animation restarts
       for (var k = 0; k < letters.length; k++) letters[k].style.animation = '';

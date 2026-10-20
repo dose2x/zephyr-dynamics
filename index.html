@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.youtube.com https://s.ytimg.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src https://www.youtube-nocookie.com https://www.youtube.com; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src 'none'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Zephyr Dynamics — Tech, made easy</title>
 <meta name="description" content="Zephyr is a small build studio for people, clubs and race teams. Websites, apps, assistants and AI agents at one clear, fixed price.">
 <link rel="icon" href="assets/zephyr-logo.png">
@@ -29,6 +29,7 @@
 <script src="js/boot.js"></script>
 </head>
 <body>
+<a class="skip" href="#top">Skip to content</a>
 
 <!-- ============ TOP BAR ============ -->
 <header class="top">
@@ -39,9 +40,13 @@
     <a href="#build">Build</a>
     <a href="#process">Process</a>
     <a href="#partners">Paddock</a>
+    <a href="#faq">FAQ</a>
     <a href="#hello">Say hello</a>
   </nav>
-  <a class="top__mail" href="mailto:aaronfs@zohomail.com">aaronfs@zohomail.com</a>
+  <div class="top__end">
+    <button class="top__motion" type="button" aria-pressed="false"><span class="top__motion-ic" aria-hidden="true"></span><span class="top__motion-t">Pause motion</span></button>
+    <a class="top__mail" href="mailto:aaronfs@zohomail.com">aaronfs@zohomail.com</a>
+  </div>
 </header>
 
 <main id="top">
@@ -85,13 +90,7 @@
 <!-- ============ WHAT WE BUILD ============ -->
 <section class="dark build" id="build">
   <div class="rule"><i>✦</i><i>✦</i><span>Four things we build · fixed prices</span><i>✦</i><i>✦</i></div>
-  <h2 class="sr-only">What we build</h2>
-
-  <div class="bigmarquee" aria-hidden="true">
-    <div class="bigmarquee__track">
-      <span>What we build</span><i>✺</i><span>What we build</span><i>✺</i><span>What we build</span><i>✺</i><span>What we build</span><i>✺</i>
-    </div>
-  </div>
+  <h2 class="build__title">What we build</h2>
 
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -119,7 +118,7 @@
             </header>
             <section class="hc__hero">
               <div class="hc__copy">
-                <h4>Roasted on the waterfront. Poured all day.</h4>
+                <div class="h4">Roasted on the waterfront. Poured all day.</div>
                 <p>Small-batch coffee and fresh pastries, one block from the ferry.</p>
                 <div class="hc__btns"><span class="hc__cta hc__cta--lg">Order ahead</span><span class="hc__link">See the menu</span></div>
               </div>
@@ -134,7 +133,7 @@
               </aside>
             </section>
             <section class="hc__sec">
-              <h5>Menu</h5>
+              <div class="h5">Menu</div>
               <div class="hc__cols">
                 <ul>
                   <li><span>Flat white</span><b>4.50</b></li>
@@ -151,7 +150,7 @@
               </div>
             </section>
             <section class="hc__sec hc__sec--sage">
-              <h5>Beans to take home</h5>
+              <div class="h5">Beans to take home</div>
               <div class="hc__tags">
                 <div class="hc__tag"><small>Guji, Ethiopia</small><b>Blueberry, jasmine</b><span>12 oz · $16</span></div>
                 <div class="hc__tag"><small>Huila, Colombia</small><b>Red apple, caramel</b><span>12 oz · $15</span></div>
@@ -160,7 +159,7 @@
             </section>
             <section class="hc__sec hc__visit">
               <div>
-                <h5>Find us</h5>
+                <div class="h5">Find us</div>
                 <p>12 Harbor Street<br>Next to the ferry landing</p>
                 <table>
                   <tr><td>Mon to Fri</td><td>7 am to 4 pm</td></tr>
@@ -207,7 +206,7 @@
           <div class="phone__screen">
             <div class="fl">
               <div class="fl__top">
-                <div><small>Good morning, Mia</small><h4>Today</h4></div>
+                <div><small>Good morning, Mia</small><div class="h4">Today</div></div>
                 <div class="fl__ring">
                   <svg viewBox="0 0 44 44">
                     <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00a98f"/><stop offset=".55" stop-color="#b62fd9"/><stop offset="1" stop-color="#ff6a13"/></linearGradient></defs>
@@ -258,12 +257,9 @@
 <!-- ============ WHAT YOU WON'T GET ============ -->
 <section class="nots">
   <div class="rule rule--light"><i>✦</i><i>✦</i><span>What you won’t get</span><i>✦</i><i>✦</i></div>
-  <div class="strike" aria-label="No sprint planning, no scope creep, no buzzwords, no surprise invoices, no circling back.">
-    <div class="strike__track" aria-hidden="true">
-      <span>Sprint planning</span><i>✦</i><span>Scope creep</span><i>✦</i><span>Buzzwords</span><i>✦</i><span>Surprise invoices</span><i>✦</i><span>“Let’s circle back”</span><i>✦</i>
-      <span>Sprint planning</span><i>✦</i><span>Scope creep</span><i>✦</i><span>Buzzwords</span><i>✦</i><span>Surprise invoices</span><i>✦</i><span>“Let’s circle back”</span><i>✦</i>
-    </div>
-  </div>
+  <ul class="strike" aria-label="What you won’t get">
+    <li>Sprint planning</li><li>Scope creep</li><li>Buzzwords</li><li>Surprise invoices</li><li>“Let’s circle back”</li>
+  </ul>
   <div class="stats">
     <div class="stat reveal"><b>1</b><span>person you talk to</span></div>
     <div class="stat reveal"><b>0</b><span>surprise invoices</span></div>
@@ -345,10 +341,36 @@
   </div>
 </section>
 
-<!-- ============ LOOP VIDEO ============ -->
-<section class="loop" id="loop" aria-hidden="true">
-  <div class="loop__frame">
-    <div data-yt="zxWAXfaKe2Q" data-start="106" data-end="126"></div>
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="faq__head">
+    <h2>Questions, answered.</h2>
+  </div>
+  <div class="faq__list">
+    <details>
+      <summary>What does it cost?</summary>
+      <p>Every package has a fixed price, listed above. If your idea is bigger, tell us and we’ll give you the price before we start. Always.</p>
+    </details>
+    <details>
+      <summary>Who will I be talking to?</summary>
+      <p>One person, from the first hello to launch.</p>
+    </details>
+    <details>
+      <summary>Do I need to be technical?</summary>
+      <p>No. We explain things in plain words, and when it’s live you get a plain-English guide for keeping it running.</p>
+    </details>
+    <details>
+      <summary>Can I see it before it goes live?</summary>
+      <p>Yes. You get a live preview link while it’s taking shape, and you can nudge it any time.</p>
+    </details>
+    <details>
+      <summary>Do I own it when it’s done?</summary>
+      <p>Yes. It goes live and it’s yours.</p>
+    </details>
+    <details>
+      <summary>What if I need more changes?</summary>
+      <p>Each package includes a set number of edit rounds. Need more? Extra rounds are available on request.</p>
+    </details>
   </div>
 </section>
 
@@ -407,6 +429,5 @@
 <script src="js/main.js"></script>
 <script src="js/demos.js"></script>
 <script src="js/title.js"></script>
-<script src="js/loop.js"></script>
 </body>
 </html>
