@@ -175,8 +175,15 @@ ul, ol { list-style: none; }
 .track__shadow { transform: translate3d(1.5%, 2.5%, 0); filter: blur(7px); opacity: .32; }
 .track__shadow path { fill: none; stroke: var(--ink); stroke-width: 30; stroke-linejoin: round; }
 .slab { transform: translateZ(calc(var(--z) * 2px)); }
+.slab.z0 { --z: 0; }
+.slab.z1 { --z: 1; }
+.slab.z2 { --z: 2; }
+.slab.z3 { --z: 3; }
+.slab.z4 { --z: 4; }
+.slab.z5 { --z: 5; }
+.slab.z6 { --z: 6; }
 .slab path { fill: none; stroke: var(--deep); stroke-width: 26; stroke-linejoin: round; }
-.slab[style*="--z:6"] path { stroke: var(--navy); }
+.slab.z6 path { stroke: var(--navy); }
 .track__top { transform: translateZ(14px); }
 .track__base { fill: none; stroke: var(--navy); stroke-width: 26; stroke-linejoin: round; }
 .track__line { fill: none; stroke: var(--paper); stroke-width: 18; stroke-linejoin: round; }
@@ -260,6 +267,8 @@ ul, ol { list-style: none; }
 
 h2, h3 { overflow-wrap: anywhere; }
 .card p, .card li { overflow-wrap: anywhere; }
+
+.defs-hidden { position: absolute; }
 
 /* ---------- browser surfaces, focus, motion control ---------- */
 ::selection { background: var(--signal); color: var(--ink); }

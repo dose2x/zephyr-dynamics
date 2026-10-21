@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; frame-src 'none'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; frame-src 'none'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
 <title>Zephyr Dynamics — Tech, made easy</title>
 <meta name="description" content="Zephyr is a small build studio for people, clubs and race teams. Websites, apps, assistants and AI agents at one clear, fixed price.">
 <link rel="icon" href="assets/favicon.png">
@@ -45,7 +45,7 @@
   </nav>
   <div class="top__end">
     <button class="top__motion" type="button" aria-pressed="false"><span class="top__motion-ic" aria-hidden="true"></span><span class="top__motion-t">Pause motion</span></button>
-    <a class="top__mail" href="mailto:aaronfs@zohomail.com">aaronfs@zohomail.com</a>
+    <a class="top__mail" href="#hello" data-mail-u="aaronfs" data-mail-d="zohomail.com"><span class="mail-addr">aaronfs [at] zohomail [dot] com</span></a>
   </div>
 </header>
 
@@ -91,7 +91,7 @@
 <section class="dark build" id="build">
   <h2 class="build__title">What we build</h2>
 
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <svg class="defs-hidden" width="0" height="0" aria-hidden="true" focusable="false">
     <defs>
       <clipPath id="buoyClip"><circle cx="12" cy="12" r="10"/></clipPath>
       <symbol id="hc-buoy" viewBox="0 0 24 24">
@@ -215,10 +215,10 @@
                 </div>
               </div>
               <ul class="tasks" data-bind="tasks">
-                <li style="--c:#ff6a13"><u><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg></u><div><span>Pack online orders</span><time>by 10:30</time></div><i></i></li>
-                <li style="--c:#00a98f"><u><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></u><div><span>Reorder oat milk</span><time>by noon</time></div><i></i></li>
-                <li style="--c:#b62fd9"><u><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg></u><div><span>Answer catering email</span><time>by 2:00</time></div><i></i></li>
-                <li style="--c:#2a5cff"><u><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></u><div><span>Post Friday special</span><time>by 3:30</time></div><i></i></li>
+                <li><u><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/></svg></u><div><span>Pack online orders</span><time>by 10:30</time></div><i></i></li>
+                <li><u><svg viewBox="0 0 24 24"><path d="M12 3c3 4 6 7 6 11a6 6 0 0 1-12 0c0-4 3-7 6-11z"/></svg></u><div><span>Reorder oat milk</span><time>by noon</time></div><i></i></li>
+                <li><u><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 8l9 6 9-6"/></svg></u><div><span>Answer catering email</span><time>by 2:00</time></div><i></i></li>
+                <li><u><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></u><div><span>Post Friday special</span><time>by 3:30</time></div><i></i></li>
               </ul>
               <div class="fl__add">+ Add a task</div>
             </div>
@@ -279,13 +279,13 @@
           <div class="track__floor" aria-hidden="true"></div>
           <svg class="track__layer track__shadow" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
           <!-- stacked copies give the road its thickness -->
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:0" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:1" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:2" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:3" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:4" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:5" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
-          <svg class="track__layer slab" viewBox="0 0 800 450" style="--z:6" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z0" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z1" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z2" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z3" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z4" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z5" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
+          <svg class="track__layer slab z6" viewBox="0 0 800 450" aria-hidden="true"><path d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/></svg>
           <svg class="track__layer track__top" viewBox="0 0 800 450" role="img" aria-label="Circuit map: one lap is one build, split into the four steps listed beside it">
             <path class="track__base" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
             <path id="circuit" class="track__line" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
@@ -377,7 +377,7 @@
   <div class="hello__row">
     <div class="hello__main">
       <p class="hello__kicker">Got an idea?</p>
-      <a class="hello__mail" href="mailto:aaronfs@zohomail.com">Say hello <span aria-hidden="true">↗</span><br>aaronfs@zohomail.com</a>
+      <a class="hello__mail" href="#hello" data-mail-u="aaronfs" data-mail-d="zohomail.com">Say hello <span aria-hidden="true">↗</span><br><span class="mail-addr">aaronfs [at] zohomail [dot] com</span></a>
     </div>
     <div class="hello__side">
       <ul>

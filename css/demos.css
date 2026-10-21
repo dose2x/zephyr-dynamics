@@ -94,6 +94,7 @@ a.card__demo--link:hover, a.card__demo--link:focus-visible { border-color: var(-
 .fl__ring span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font: 800 15px "Outfit", sans-serif; white-space: nowrap; }
 .fl__ring span b { font: inherit; }
 .tasks { display: grid; gap: 10px; }
+.tasks li:nth-child(1) { --c: #ff6a13; } .tasks li:nth-child(2) { --c: #00a98f; } .tasks li:nth-child(3) { --c: #b62fd9; } .tasks li:nth-child(4) { --c: #2a5cff; }
 .tasks li { display: flex; align-items: center; gap: 12px; padding: 11px 14px 11px 11px; border-radius: 20px; background: #fff; box-shadow: 0 8px 18px rgba(35, 32, 90, .07); transition: opacity .3s; }
 .tasks u { flex: none; width: 40px; height: 40px; border-radius: 13px; display: grid; place-items: center; background: var(--c); text-decoration: none; }
 .tasks u svg { width: 20px; height: 20px; fill: none; stroke: #fff; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }

@@ -1,4 +1,12 @@
 (function () {
+  // The contact address is not in the page source (keeps it from bots that only read HTML): build it here.
+  document.querySelectorAll('[data-mail-u]').forEach(function (a) {
+    var addr = a.getAttribute('data-mail-u') + '@' + a.getAttribute('data-mail-d');
+    a.href = 'mailto:' + addr;
+    var s = a.querySelector('.mail-addr');
+    if (s) s.textContent = addr;
+  });
+
   var root = document.documentElement;
   function paused() { return root.classList.contains('motion-paused'); }
 
