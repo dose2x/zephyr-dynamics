@@ -5,7 +5,7 @@
 (function () {
   'use strict';
   var svg = document.querySelector('.giant svg');
-  if (!svg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!svg) return;   // reduced motion still gets the built letters; the stylesheet just switches their animation off
 
   var REPLAY_MS = 20000;   // how often the intro plays again
   var NS = 'http://www.w3.org/2000/svg';
@@ -27,8 +27,10 @@
       var str = orig.textContent.trim(), cls = orig.getAttribute('class'), y = orig.getAttribute('y');
       var tmp = el('text', { 'class': cls, x: 0, y: y }, svg);        // unstretched copy, only for measuring
       tmp.textContent = str;
-      var sx = 1000 / tmp.getComputedTextLength();                      // same stretch the original uses
-      var row = el('g', { transform: 'scale(' + sx + ' 1)' }, layer);
+      var gap = parseFloat(getComputedStyle(tmp).letterSpacing) || 0;  // spacing after the last letter doesn't count
+      var x0 = parseFloat(orig.getAttribute('x')) || 0, want = parseFloat(orig.getAttribute('textLength')) || 1000;
+      var sx = want / (tmp.getComputedTextLength() - gap);              // fit the row to the width the markup asks for
+      var row = el('g', { transform: 'translate(' + x0 + ' 0) scale(' + sx + ' 1)' }, layer);
 
       for (var i = 0; i < str.length; i++) {
         var m = el('g', { 'class': 'M' }, row);
