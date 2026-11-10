@@ -295,7 +295,16 @@
             <path class="seg seg-3" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
             <path class="track__center" pathLength="100" d="M150,330 C150,250 200,230 280,230 L430,230 C480,230 500,200 500,160 C500,110 540,80 600,80 L660,80 C720,80 750,110 750,160 C750,215 700,235 650,245 L600,255 C560,263 545,290 560,320 C575,355 560,390 500,390 L250,390 C190,390 150,375 150,330 Z"/>
             <g class="sf"><line x1="128" y1="330" x2="172" y2="330"/><text x="182" y="318">START / FINISH</text></g>
-            <circle id="dot" r="8" cx="150" cy="330"/>
+            <!-- top-down prototype race car, drawn nose toward +x; js/main.js moves and turns it -->
+            <g id="dot" class="car" transform="translate(150 330) rotate(-90) scale(1.25)">
+              <path class="car__dark" d="M-13,-8 h7 v16 h-7 Z M7,-8 h7 v16 h-7 Z"/>
+              <path class="car__body" d="M-16,-6.8 L-5,-6.8 L-2,-5 L4,-5 L7,-6.8 L13,-6.8 Q19,-5.5 19,0 Q19,5.5 13,6.8 L7,6.8 L4,5 L-2,5 L-5,6.8 L-16,6.8 Z"/>
+              <path class="car__stripe" d="M-16,0 H19"/>
+              <path class="car__dark" d="M-5,-3.2 Q5,-4.4 9,0 Q5,4.4 -5,3.2 Z"/>
+              <path class="car__glass" d="M3,-3 Q6.5,-2.4 7.6,0 Q6.5,2.4 3,3 Z"/>
+              <path class="car__dark" d="M-19.5,-8 h3.5 v16 h-3.5 Z M-16,-0.7 h11 v1.4 h-11 Z"/>
+              <path class="car__light" d="M14.5,-5.2 h2 v2 h-2 Z M14.5,3.2 h2 v2 h-2 Z"/>
+            </g>
           </svg>
           <div class="beacon" aria-hidden="true">
             <span class="beacon__tag"><b id="beacon-s">S1</b><em id="beacon-t">Say hello</em></span>

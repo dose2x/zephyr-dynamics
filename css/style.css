@@ -196,7 +196,11 @@ ul, ol { list-style: none; }
 .track[data-active="0"] .seg-0, .track[data-active="1"] .seg-1, .track[data-active="2"] .seg-2, .track[data-active="3"] .seg-3 { opacity: 1; }
 .sf line { stroke: var(--ink); stroke-width: 6; stroke-dasharray: 4 4; }
 .sf text { font-family: var(--mono); font-size: 0.75rem; fill: var(--navy); letter-spacing: .1em; }
-#dot { fill: var(--signal); stroke: var(--ink); stroke-width: 2; }
+.car__body { fill: var(--signal); stroke: var(--ink); stroke-width: 1.2; stroke-linejoin: round; }
+.car__dark { fill: var(--ink); }
+.car__stripe { fill: none; stroke: var(--paper); stroke-width: 1.6; }
+.car__glass { fill: var(--sky); }
+.car__light { fill: var(--paper); }
 
 /* upright marker that rides the lap */
 .beacon { position: absolute; left: 0; top: 0; width: 0; height: 0; transform-style: preserve-3d; pointer-events: none; will-change: transform; }

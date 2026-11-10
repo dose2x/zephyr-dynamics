@@ -76,7 +76,10 @@
 
   function setProgress(p, force) {
     var pt = path.getPointAtLength(p * total);
-    dot.setAttribute('cx', pt.x); dot.setAttribute('cy', pt.y);
+    // the car faces along the track: heading = direction from a point just behind to a point just ahead
+    var d = p * total, a = path.getPointAtLength((d - 3 + total) % total), b = path.getPointAtLength((d + 3) % total);
+    var heading = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+    dot.setAttribute('transform', 'translate(' + pt.x.toFixed(2) + ' ' + pt.y.toFixed(2) + ') rotate(' + heading.toFixed(1) + ') scale(1.25)');
     placeBeacon(pt);
     var s = Math.min(3, Math.floor(p * 4));
     if (force || track.getAttribute('data-active') !== String(s)) {
