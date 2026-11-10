@@ -66,8 +66,9 @@ ul, ol { list-style: none; }
 /* hero and footer titles match the logo lettering: Michroma thickened with a same-colour outline, DYNAMICS small and wide-spaced */
 .giant svg, .foot__giant svg { width: 100%; height: auto; display: block; aspect-ratio: 1000 / 206; }
 .giant text, .foot__giant text { font-family: var(--display); fill: var(--navy); stroke: var(--navy); stroke-linejoin: miter; paint-order: stroke; }
-.giant .g1, .foot__giant .g1 { font-size: 8.25rem; stroke-width: .08em; letter-spacing: .28em; }
-.giant .g2, .foot__giant .g2 { font-size: 3.25rem; stroke-width: .04em; letter-spacing: .68em; }
+/* px on purpose: these are units inside the drawing, which scales with the page width (js/title.js cut-outs rely on it) */
+.giant .g1, .foot__giant .g1 { font-size: 132px; stroke-width: .08em; letter-spacing: .28em; }
+.giant .g2, .foot__giant .g2 { font-size: 52px; stroke-width: .04em; letter-spacing: .68em; }
 
 .ticker {
   display: grid; grid-template-columns: auto 1fr auto; align-items: stretch;
