@@ -1,13 +1,12 @@
 /* Hero wordmark intro: splits ZEPHYR / DYNAMICS into letters so each one can
    slide in from the left, blurred and slanted, one after another (see .giant .M in style.css).
-   It plays on load and again every 20 seconds.
+   It plays once, on load.
    The original stretched <text> stays in the markup as the no-JS / reduced-motion fallback. */
 (function () {
   'use strict';
   var svg = document.querySelector('.giant svg');
   if (!svg || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
-  var REPLAY_MS = 20000;   // how often the intro plays again
   var NS = 'http://www.w3.org/2000/svg';
   function el(name, attrs, parent) {
     var e = document.createElementNS(NS, name);
@@ -39,16 +38,6 @@
       svg.removeChild(tmp);
       orig.style.display = 'none';
     });
-
-    // replay the intro every REPLAY_MS while the title is on screen
-    var letters = svg.querySelectorAll('.M'), visible = true;
-    new IntersectionObserver(function (e) { visible = e[0].isIntersecting; }).observe(svg);
-    setInterval(function () {
-      if (!visible || document.hidden || document.documentElement.classList.contains('motion-paused')) return;
-      for (var i = 0; i < letters.length; i++) letters[i].style.animation = 'none';
-      void svg.getBoundingClientRect();                                   // force reflow so the animation restarts
-      for (var k = 0; k < letters.length; k++) letters[k].style.animation = '';
-    }, REPLAY_MS);
   }
 
   (document.fonts && document.fonts.load ? document.fonts.load('150px Michroma').then(function () { return document.fonts.ready; }) : Promise.resolve())
