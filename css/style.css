@@ -77,11 +77,10 @@ ul, ol { list-style: none; }
 }
 .ticker__tag {
   background: var(--signal); color: var(--ink);
-  display: flex; align-items: center; gap: 10px; padding: 0 18px;
-  font-family: var(--mono); font-size: 0.75rem; letter-spacing: .1em;
+  display: flex; align-items: center; padding: 0 18px;
+  font-family: var(--body); font-size: 0.9375rem; font-weight: 600; white-space: nowrap;
   min-height: 52px;
 }
-.ticker__tag b { font-family: var(--display); font-size: 1.375rem; letter-spacing: 0; }
 .ticker__run { overflow: hidden; display: flex; align-items: center; mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent); }
 .ticker__track { display: flex; align-items: center; gap: 24px; white-space: nowrap; animation: run 38s linear infinite; padding-left: 24px; }
 .ticker__track span { font-family: var(--display); font-size: clamp(0.875rem, 1.8vw, 1.5rem); text-transform: uppercase; }
@@ -225,8 +224,6 @@ ul, ol { list-style: none; }
 /* the whole "Say hello" link is navy: signal orange is only 2.7:1 on this light panel, under the 3:1 a glyph this size needs */
 .hello__side { display: flex; align-items: flex-end; gap: 28px; font-size: 0.9375rem; }
 .hello__side li { padding: 2px 0; }
-.hello__star { width: 72px; }
-.hello__star path { fill: var(--navy); }
 
 /* ---------- footer ---------- */
 .foot { background: var(--ink); color: var(--ice); padding: var(--pad); }
